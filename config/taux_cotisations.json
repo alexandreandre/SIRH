@@ -1,0 +1,111 @@
+{
+  "TAUX_COTISATIONS": {
+    "securite_sociale_maladie": {
+      "libelle": "Sécurité sociale - Maladie, Maternité, Invalidité, Décès",
+      "base": "brut",
+      "salarial": 0.013,
+      "patronal": 0.07
+    },
+    "sante_mutuelle": {
+      "libelle": "Complémentaire santé (Mutuelle Isolée)",
+      "salarial_fixe": null,
+      "patronal_fixe": null
+    },
+    "prevoyance": {
+      "libelle": "Complémentaire Incapacité Invalidité Décès",
+      "base": "brut",
+      "salarial": null,
+      "patronal": null
+    },
+    "retraite_secu_plafond": {
+      "libelle": "Sécurité sociale Vieillesse plafonnée",
+      "base": "plafond_ss",
+      "salarial": 0.069,
+      "patronal": 0.0855
+    },
+    "retraite_secu_deplafond": {
+      "libelle": "Sécurité sociale Vieillesse déplafonnée",
+      "base": "brut",
+      "salarial": 0.004,
+      "patronal": 0.0202
+    },
+    "retraite_comp_t1": {
+      "libelle": "Retraite Complémentaire Tranche 1 (AGIRC-ARCCO)",
+      "base": "plafond_ss",
+      "salarial": null,
+      "patronal": null
+    },
+    "ceg_t1": {
+      "libelle": "Contribution d'Equilibre Général (CEG) T1",
+      "base": "plafond_ss",
+      "salarial": null,
+      "patronal": null
+    },
+    "allocations_familiales": {
+      "libelle": "Allocations familiales",
+      "base": "brut",
+      "salarial": null,
+      "patronal": 0.0345
+    },
+    "assurance_chomage": {
+      "libelle": "Assurance Chômage",
+      "base": "brut",
+      "salarial": null,
+      "patronal": 0.04
+    },
+    "ags": {
+      "libelle": "Cotisation AGS (Garantie des salaires)",
+      "base": "brut",
+      "salarial": null,
+      "patronal": 0.0025
+    },
+    "csa": {
+      "libelle": "Contribution Solidarité Autonomie (CSA)",
+      "base": "brut",
+      "salarial": null,
+      "patronal": 0.003
+    },
+    "fnal": {
+      "libelle": "FNAL (Aide au logement)",
+      "base": "plafond_ss",
+      "salarial": null,
+      "patronal": 0.005
+    },
+    "formation_pro": {
+      "libelle": "Contribution Formation Professionnelle",
+      "base": "brut",
+      "salarial": null,
+      "patronal": null
+    },
+    "taxe_apprentissage": {
+      "libelle": "Taxe d'Apprentissage (part principale)",
+      "base": "brut",
+      "salarial": null,
+      "patronal": null
+    },
+    "dialogue_social": {
+      "libelle": "Contribution dialogue social",
+      "base": "brut",
+      "salarial": null,
+      "patronal": null
+    },
+    "csg_deductible": {
+      "libelle": "CSG déductible de l'impôt sur le revenu",
+      "base": "csg_crds",
+      "salarial": 0.068,
+      "patronal": null
+    },
+    "csg_crds_non_deductible": {
+      "libelle": "CSG/CRDS non déductible de l'impôt",
+      "base": "csg_crds",
+      "salarial": 0.029,
+      "patronal": 0
+    },
+    "allegement_heures_sup": {
+      "libelle": "Allègement sur les heures supplémentaires",
+      "base": "heures_sup",
+      "salarial": null,
+      "patronal": null
+    }
+  }
+}

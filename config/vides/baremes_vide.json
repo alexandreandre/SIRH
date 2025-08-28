@@ -1,0 +1,54 @@
+{
+    "FRAIS_PROFESSIONNELS_2025": {
+      "repas_indemnites": {
+        "sur_lieu_travail": 0,
+        "hors_locaux_avec_restaurant": 0,
+        "hors_locaux_sans_restaurant": 0
+      },
+      "petit_deplacement_bareme": [],
+      "grand_deplacement": {
+        "metropole": [],
+        "outre_mer_groupe1": [],
+        "outre_mer_groupe2": []
+      },
+      "mutation_professionnelle": {
+        "hebergement_provisoire": {
+          "montant_par_jour": 0
+        },
+        "hebergement_definitif": {
+          "frais_installation": 0,
+          "majoration_par_enfant": 0,
+          "plafond_total": 0
+        }
+      },
+      "mobilite_durable": {
+        "employeurs_prives": {
+          "limite_base": 0,
+          "limite_cumul_transport_public": 0,
+          "limite_cumul_carburant_total": 0,
+          "limite_cumul_carburant_part_carburant": 0
+        },
+        "employeurs_publics": []
+      },
+      "teletravail": {
+        "indemnite_sans_accord": {
+          "par_jour": 0,
+          "limite_mensuelle": 0,
+          "par_mois_pour_1_jour_semaine": 0
+        },
+        "indemnite_avec_accord": {
+          "par_jour": 0,
+          "limite_mensuelle": 0,
+          "par_mois_pour_1_jour_semaine": 0
+        },
+        "materiel_informatique_perso": {
+          "montant_mensuel": 0
+        }
+      }
+    },
+    "SECURITE_SOCIALE_2025": {
+      "indemnites_journalieres_maladie": {
+        "plafond_ij_base": null
+      }
+    }
+  }

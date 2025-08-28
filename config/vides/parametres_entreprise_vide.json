@@ -1,0 +1,43 @@
+{
+    "PARAMETRES_ENTREPRISE": {
+      "identite": {
+        "raison_sociale": "",
+        "siret": "",
+        "adresse": "",
+        "code_naf_ape": "",
+        "convention_collective": ""
+      },
+      "conditions_cotisations": {
+        "effectif_total": 0,
+        "remuneration_annuelle_brute_inferieure_3.5_smic": 0,
+        "est_entreprise_travail_temporaire": 0,
+        "taux_accident_travail": 0
+      },
+      "constantes_paie_2025": {
+        "smic_horaire": {
+        "cas_general": 0,
+        "entre_17_et_18_ans": 0,
+        "moins_de_17_ans": 0
+      },
+        "plafonds_securite_sociale": { 
+          "annuel": 0,
+          "trimestriel": 0,
+          "mensuel": 0,
+          "quinzaine": 0,
+          "hebdomadaire": 0,
+          "journalier": 0,
+          "horaire": 0
+        },
+        "parametre_T_reduction_generale": 0,
+        "saisie_sur_salaire": {
+          "solde_bancaire_insaisissable": 0,
+          "bareme_mensuel": []
+        }
+      },
+      "avantages_en_nature": {
+        "repas_valeur_forfaitaire": 0,
+        "titre_restaurant_exoneration_max_patronale": 0,
+        "logement_bareme_forfaitaire": []
+      }
+    }
+  }

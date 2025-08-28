@@ -1,0 +1,45 @@
+{
+  "PARAMETRES_CONTRAT": {
+    "identite": {
+      "nom": "DUBOIS",
+      "prenom": "Marc",
+      "num_ss": "1 89 05 01 123 456",
+      "date_naissance": "2006-05-10",
+      "adresse": "12 Rue Lamartine, 01300 Belley"
+    },
+    "poste": {
+      "emploi": "Peintre industriel qualifié",
+      "classification": "Groupe C, Classe 5",
+      "date_entree": "2020-07-02",
+      "isAlsaceMoselle": true
+    },
+    "remuneration": {
+      "taux_horaire": 13.80,
+      "horaire_mensuel": 151.67,
+      "duree_hebdomadaire": 35
+    },
+    "variables_du_mois": {
+      "heures_supplementaires_majoration_25": 6.0,
+      "prime_qualite_securite": 80.0,
+      "jours_absence_non_remuneree": 0.0,
+      "jours_conges_payes_pris": 0.5,
+      "heures_par_jour_travaille": 7.0,
+      "avantage_logement_nb_pieces": 0,
+      "frais_repas_restaurant": 2,
+      "frais_petit_deplacement_km": 45,
+      "vehicule_electrique": true,
+      "jours_teletravail": 8
+    },
+    "imposition": {
+      "taux_pas": 0.041,
+      "saisie_arret_active": false,
+      "personnes_a_charge_saisie": 0
+    },
+    "compteurs": {
+      "conges_solde_anterieur": 12.5,
+      "conges_acquis_par_mois": 2.08,
+      "cumul_brut_annuel_debut_periode": 16668.40,
+      "cumul_net_imposable_annuel_debut_periode": 12848.20
+    }
+  }
+}

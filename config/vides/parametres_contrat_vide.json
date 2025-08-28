@@ -1,0 +1,45 @@
+{
+    "PARAMETRES_CONTRAT": {
+      "identite": {
+        "nom": "",
+        "prenom": "",
+        "date_naissance": "",
+        "num_ss": "",
+        "adresse": ""
+      },
+      "poste": {
+        "emploi": "",
+        "classification": "",
+        "date_entree": "",
+        "isAlsaceMoselle": 0
+      },
+      "remuneration": {
+        "taux_horaire": 0,
+        "horaire_mensuel": 0,
+        "duree_hebdomadaire": 0
+      },
+      "variables_du_mois": {
+        "heures_supplementaires_majoration_25": 0,
+        "prime_qualite_securite": 0,
+        "jours_absence_non_remuneree": 0,
+        "jours_conges_payes_pris": 0,
+        "heures_par_jour_travaille": 0,
+        "avantage_logement_nb_pieces": 0,
+        "frais_repas_restaurant": 0,
+        "frais_petit_deplacement_km": 0,
+        "vehicule_electrique": 0,
+        "jours_teletravail": 0
+      },
+      "imposition": {
+        "taux_pas": 0,
+        "saisie_arret_active": 0,
+        "personnes_a_charge_saisie": 0
+      },
+      "compteurs": {
+        "conges_solde_anterieur": 0,
+        "conges_acquis_par_mois": 0,
+        "cumul_brut_annuel_debut_periode": 0,
+        "cumul_net_imposable_annuel_debut_periode": 0
+      }
+    }
+  }
