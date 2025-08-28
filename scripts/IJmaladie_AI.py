@@ -6,6 +6,8 @@ import os
 from bs4 import BeautifulSoup
 from openai import OpenAI
 from googlesearch import search
+from dotenv import load_dotenv
+load_dotenv()
 
 FICHIER_BAREMES = 'config/baremes.json'
 # On utilise l'année en cours pour une recherche plus précise

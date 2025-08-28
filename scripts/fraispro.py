@@ -6,6 +6,7 @@ import requests
 import time
 from bs4 import BeautifulSoup
 
+
 FICHIER_BAREMES = 'config/baremes.json'
 URL_URSSAF = "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/frais-professionnels.html"
 

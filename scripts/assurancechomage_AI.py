@@ -7,6 +7,8 @@ from datetime import datetime
 from bs4 import BeautifulSoup
 from openai import OpenAI
 from googlesearch import search
+from dotenv import load_dotenv
+load_dotenv()
 
 # --- Fichiers de configuration ---
 FICHIER_TAUX = 'config/taux_cotisations.json'
