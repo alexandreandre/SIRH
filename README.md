@@ -1,140 +1,116 @@
-BULLETIN_DE_PAIE/
-├─ __pycache__/
-├─ config/
-│  ├─ vides/
-│  │  ├─ baremes_vide.json
-│  │  ├─ parametres_contrat_vide.json
-│  │  ├─ parametres_entreprise_vide.json
-│  │  └─ taux_cotisations_vide.json
-│  ├─ baremes.json
-│  ├─ parametres_contrat.json
-│  ├─ parametres_entreprise.json
-│  └─ taux_cotisations.json
-├─ HTML/
-│  ├─ check_changement_du_html.py
-│  ├─ check_changement_du_html_2.py
-│  ├─ recup_html.py
-│  ├─ page.html
-│  ├─ page.remote.html
-│  └─ tauxcotisations.html
-├─ scripts/
-│  ├─ AGS.py
-│  ├─ alloc.py
-│  ├─ assurancechomage.py
-│  ├─ Avantages.py
-│  ├─ calculT.py
-│  ├─ CSA.py
-│  ├─ CSG.py
-│  ├─ FNAL.py
-│  ├─ fraispro.py
-│  ├─ IJmaladie.py
-│  ├─ MMIDpatronal.py
-│  ├─ MMIDsalarial.py
-│  ├─ saisie-arret.py
-│  ├─ SMIC.py
-│  ├─ vider_json.py
-│  ├─ vieillessepatronal.py
-│  └─ vieillessesalarial.py
-├─ venv/
-├─ generateur_fiche_paie.py
-├─ idcc.py
-└─ README.md
+# Moteur de Paie en Python
 
+Ce projet est un moteur de calcul de paie en Python, conçu pour générer des bulletins de paie conformes à la législation française. Il est modulaire, piloté par les données, et capable de gérer plusieurs employés et conventions collectives.
 
-.
-├── data/                         # Données JSON générées et centralisées
-│   ├── Architecture_donnees.md   # Documentation sur la structure des données
-│   ├── bareme_km.json            # Barème kilométrique
-│   ├── cotisations.json          # Cotisations sociales
-│   ├── heuressupp.json          # Cotisations sociales
-│   ├── frais_pro.json            # Frais professionnels
-│   ├── metadata.json             # Métadonnées globales
-│   ├── pas.json                  # Prélèvement à la source
-│   ├── secu.json                 # Sécurité sociale
-│   └── smic.json                 # Salaire minimum interprofessionnel de croissance
-│
-├── scripts/                      # Scripts de scraping, AI et orchestrateurs
-│   ├── AGIRC-ARRCO/              # Retraite complémentaire AGIRC-ARRCO
-│   ├── AGS/                      # Assurance de garantie des salaires
-│   ├── alloc/                    # Allocations diverses
-│   ├── assurancechomage/         # Assurance chômage
-│   ├── Avantages/                # Avantages en nature
-│   ├── bareme-indemnite-kilometrique/ # Indemnités kilométriques
-│   ├── CSA/                      # Contribution solidarité autonomie
-│   ├── CSG/                      # Contribution sociale généralisée
-│   ├── FNAL/                     # Fonds national d’aide au logement
-│   ├── fraispro/                 # Frais professionnels
-│   ├── IJmaladie/                # Indemnités journalières maladie
-│   ├── MMIDpatronal/             # Maladie-Maternité-Invalidité-Décès (part patronale)
-│   ├── MMIDsalarial/             # Maladie-Maternité-Invalidité-Décès (part salariale)
-│   ├── PAS/                      # Prélèvement à la source
-│   ├── PSS/                      # Plafond de la sécurité sociale
-│   ├── SMIC/                     # Salaire minimum interprofessionnel de croissance
-│   ├── vieillessepatronal/       # Cotisations vieillesse part patronale
-│   └── vieillessesalarial/       # Cotisations vieillesse part salariale
-│
-├── .env                          # Variables d’environnement (clé API, etc.)
-├── .gitignore                    # Exclusions Git
-├── bofip.py                      # Parsing des données BOFiP
-├── debug_ameli.html              # Fichier de debug pour tests Ameli
-├── generateur_fiche_paie.py      # Moteur de génération des fiches de paie
-├── idcc.py                       # Gestion des conventions collectives (IDCC)
-├── README.md                     # Documentation principale
-└── requirements.txt              # Dépendances Python
+## Objectif
 
+L'objectif de ce logiciel est de produire des bulletins de paie PDF précis et justes, en automatisant les calculs complexes liés au salaire brut, aux cotisations sociales, aux réductions de charges, et à l'impôt sur le revenu.
 
+---
 
-generateur_fiche_paie.py : Génère la fiche de paie
+## Architecture Générale
 
+Le projet est structuré en quatre parties principales : les données (`data`), le moteur de calcul (`moteur_paie`), la présentation (`templates`), et les scripts (`scripts`).
 
-Explication des dossiers :
+    .
+    ├── data/
+    │   ├── employes/
+    │   │   └── [NOM_EMPLOYE]/
+    │   │       ├── contrat.json
+    │   │       ├── horaires_MM.json
+    │   │       ├── saisie_du_mois.json
+    │   │       └── cumuls.json
+    │   │
+    │   ├── conventions_collectives.json
+    │   ├── cotisations.json
+    │   └── ... (autres barèmes légaux)
+    │
+    ├── moteur_paie/
+    │   ├── __init__.py
+    │   ├── bulletin.py
+    │   ├── calcul_brut.py
+    │   ├── calcul_conges.py
+    │   ├── calcul_cotisations.py
+    │   └── ... (autres modules de calcul)
+    │
+    ├── scripts/
+    │   └── smic/
+    │       ├── orchestrator.py
+    │       ├── scraper_ia.py
+    │       ├── scraper_legisocial.py
+    │       └── ...
+    │
+    ├── templates/
+    │   ├── template_bulletin.html
+    │   └── style.css
+    │
+    ├── generateur_fiche_paie.py
+    └── requirements.txt
 
-📂 config/
+---
 
-Ce dossier contient les paramètres et taux utilisés pour générer les bulletins de paie.
+## Fonctionnement du Calcul
 
-parametres_contrat.json : définit les paramètres individuels du contrat (taux horaire, heures mensuelles, primes, mutuelle, PAS, indemnités).
+Le processus de génération d'un bulletin est orchestré par `generateur_fiche_paie.py` et suit un flux logique :
 
-parametres_entreprise.json : stocke les informations légales de l’entreprise (raison sociale, SIRET, adresse) et ses conditions de cotisations (effectif, seuils SMIC).
+1.  **Configuration** : On choisit l'employé et la période à calculer dans `generateur_fiche_paie.py`.
+2.  **Chargement des Données** : `moteur_paie/contexte.py` charge toutes les données pertinentes (contrat, entreprise, barèmes, cumuls, convention collective) dans un objet central.
+3.  **Calcul du Brut** : `moteur_paie/calcul_brut.py` calcule le salaire brut en intégrant le salaire de base, les primes, les congés payés, et les heures supplémentaires (avec un décompte hebdomadaire strict).
+4.  **Calcul des Cotisations** : `moteur_paie/calcul_cotisations.py` génère toutes les lignes de cotisations sociales (salariales et patronales) en appliquant les taux aux bonnes assiettes. Les réductions (Fillon, etc.) sont également calculées.
+5.  **Calcul des Nets** : `moteur_paie/calcul_net.py` calcule la cascade des nets : Net Social, Net Imposable (avec défiscalisation des HS) et le Net à Payer final après impôt et ajustements.
+6.  **Assemblage et Rendu** : `moteur_paie/bulletin.py` assemble toutes ces informations dans un dictionnaire final, qui est ensuite passé au template `templates/template_bulletin.html` pour générer le PDF via WeasyPrint.
 
-taux_cotisations.json : regroupe l’ensemble des taux applicables aux cotisations sociales (maladie, vieillesse, chômage, allocations, CSG/CRDS, etc.), avec distinction part salariale et patronale.
+---
 
+## Installation
 
-📂 HTML/
+1.  Clonez le dépôt.
+2.  Créez un environnement virtuel :
+    ```shell
+    python -m venv venv
+    source venv/bin/activate  # Sur macOS/Linux
+    venv\Scripts\activate    # Sur Windows
+    ```
+3.  Installez les dépendances :
+    ```shell
+    pip install -r requirements.txt
+    ```
 
-Dossier pour récupérer, versionner et contrôler la page URSSAF source des taux.
+---
 
-check_changement_du_html.py
-Récupère l’HTML en ligne, normalise, compare au fichier local, affiche un diff unifié, puis propose de remplacer ou d’enregistrer une copie .remote.html.
+## Utilisation
 
-recup_html.py
-Télécharge la page URSSAF avec en-tête User-Agent, parse avec BeautifulSoup, et enregistre un page.html propre dans ce dossier.
+1.  **Préparez les données** : Assurez-vous que le dossier `data/employes/[NOM_EMPLOYE]/` contient les fichiers `contrat.json`, `horaires_MM.json`, `saisie_du_mois.json` et `cumuls.json` pour l'employé désiré.
+2.  **Configurez le calcul** : Ouvrez `generateur_fiche_paie.py` et modifiez les variables en haut de la fonction `generer_une_fiche_de_paie` pour choisir l'employé (`nom_dossier_employe`) et la période (`annee_paie`, `mois_paie`).
+3.  **Lancez le script** :
+    ```shell
+    python generateur_fiche_paie.py
+    ```
+4.  Le bulletin PDF sera généré dans le dossier de l'employé correspondant.
 
-page.html
-Snapshot local de référence. Sert de base pour la comparaison et pour un parsing hors-ligne reproductible.
+---
 
-tauxcotisations.html
-Extrait représentatif des tableaux URSSAF (patronal/salarial). Utilisé pour aider Gemini à scraper.
+## Le Dossier `scripts/` : Mise à Jour Automatique des Données 🤖
 
-📂 scripts/
+Ce dossier contient des outils pour maintenir les barèmes légaux et conventionnels (SMIC, taux de cotisations, etc.) à jour dans le dossier `data/`.
 
-Automatise la mise à jour des taux depuis l’URSSAF et l’écriture dans config/taux_cotisations.json.
+### Objectif
 
-alloc.py
-Scrape le taux des allocations familiales (réduit ou plein). Met à jour la part patronale.
+L'objectif est d'automatiser la collecte des taux et des valeurs depuis des sources externes et de ne mettre à jour les fichiers de données que lorsque l'information est confirmée par plusieurs sources, garantissant ainsi la fiabilité.
 
-FNAL.py
-Scrape le FNAL selon l’effectif < 50 ou ≥ 50. Met à jour la part patronale.
+### Structure
 
-MMIDpatronal.py
-Scrape le taux maladie employeur (“taux plein à 13 %”). Met à jour securite_sociale_maladie.patronal.
+Chaque sous-dossier (ex: `smic/`, `cotisations/`) correspond à un fichier de données à mettre à jour et contient quatre scripts :
 
-MMIDsalarial.py
-Lit isAlsaceMoselle. Scrape le taux maladie salarié Alsace-Moselle si besoin. Met à jour securite_sociale_maladie.salarial.
+* `scraper_site_A.py`: Un script de scraping ciblé sur une source fiable (ex: le site de l'URSSAF).
+* `scraper_site_B.py`: Un second script de scraping sur une autre source (ex: LegiSocial).
+* `scraper_ia.py`: Un script plus flexible qui utilise une recherche Google ou une IA pour trouver la valeur sur des sources moins structurées.
+* `orchestrator.py`: Le script principal qui pilote les trois autres.
 
-vieillessepatronal.py
-Scrape les taux vieillesse employeur (déplafonné et plafonné). Met à jour retraite_secu_deplafond.patronal et retraite_secu_plafond.patronal.
+### Principe de Fonctionnement
 
-vieillessesalarial.py
-Scrape les taux vieillesse salarié (déplafonné et plafonné). Met à jour retraite_secu_deplafond.salarial et retraite_secu_plafond.salarial.
-
+1.  L'utilisateur lance l'orchestrateur pour une donnée spécifique (ex: `python scripts/smic/orchestrator.py`).
+2.  L'`orchestrator.py` exécute les trois scripts de scraping pour récupérer la même information depuis trois sources différentes.
+3.  Il compare les trois résultats obtenus.
+4.  **Règle de consensus** : Si, et seulement si, **les trois sources retournent une valeur rigoureusement identique**, la donnée est considérée comme fiable et validée.
+5.  En cas de consensus, l'orchestrateur met à jour automatiquement le fichier JSON correspondant dans `data/` avec la nouvelle valeur. En cas de divergence, une erreur est levée, nécessitant une vérification manuelle.
