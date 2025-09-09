@@ -1,0 +1,39 @@
+{
+  "periode": {
+    "mois": 7,
+    "annee": 2025
+  },
+  "calendrier": [
+    { "jour": 1, "type": "travail", "heures": 10 },
+    { "jour": 2, "type": "travail", "heures": 10 },
+    { "jour": 3, "type": "travail", "heures": 8 },
+    { "jour": 4, "type": "travail", "heures": 7 },
+    { "jour": 5, "type": "weekend" },
+    { "jour": 6, "type": "weekend" },
+    { "jour": 7, "type": "travail", "heures": 9 },
+    { "jour": 8, "type": "travail", "heures": 9 },
+    { "jour": 9, "type": "travail", "heures": 9 },
+    { "jour": 10, "type": "travail", "heures": 9 },
+    { "jour": 11, "type": "travail", "heures": 7 },
+    { "jour": 12, "type": "weekend" },
+    { "jour": 13, "type": "weekend" },
+    { "jour": 14, "type": "travail", "heures": 9 },
+    { "jour": 15, "type": "travail", "heures": 9 },
+    { "jour": 16, "type": "travail", "heures": 9 },
+    { "jour": 17, "type": "travail", "heures": 9 },
+    { "jour": 18, "type": "travail", "heures": 7 },
+    { "jour": 19, "type": "weekend" },
+    { "jour": 20, "type": "weekend" },
+    { "jour": 21, "type": "travail", "heures": 9 },
+    { "jour": 22, "type": "travail", "heures": 9 },
+    { "jour": 23, "type": "travail", "heures": 9 },
+    { "jour": 24, "type": "travail", "heures": 9 },
+    { "jour": 25, "type": "travail", "heures": 7 },
+    { "jour": 26, "type": "weekend" },
+    { "jour": 27, "type": "weekend" },
+    { "jour": 28, "type": "travail", "heures": 9 },
+    { "jour": 29, "type": "travail", "heures": 9 },
+    { "jour": 30, "type": "travail", "heures": 9 },
+    { "jour": 31, "type": "travail", "heures": 9 }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "schemas/baremes_km.schema.json",
+    "title": "baremes_km.json",
+    "type": "object",
+    "required": ["meta", "voitures", "motocyclettes", "cyclomoteurs"],
+    "additionalProperties": false,
+    "properties": {
+      "meta": {
+        "type": "object",
+        "required": ["last_scraped", "hash", "source", "generator"],
+        "additionalProperties": false,
+        "properties": {
+          "last_scraped": { "type": "string" },
+          "hash": { "type": "string" },
+          "source": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "url": { "type": "string" },
+                "label": { "type": "string" },
+                "date_doc": { "type": "string" }
+              },
+              "required": ["url"]
+            }
+          },
+          "generator": { "type": "string" }
+        }
+      },
+      "voitures": { "$ref": "#/$defs/famille" },
+      "motocyclettes": { "$ref": "#/$defs/famille" },
+      "cyclomoteurs": { "$ref": "#/$defs/famille" }
+    },
+    "$defs": {
+      "segment": {
+        "type": "object",
+        "required": ["d_min", "d_max"],
+        "additionalProperties": false,
+        "properties": {
+          "d_min": { "type": "number" },
+          "d_max": { "type": ["number", "null"] }
+        }
+      },
+      "formule": {
+        "type": "object",
+        "required": ["segment", "a", "b"],
+        "additionalProperties": false,
+        "properties": {
+          "segment": { "type": "integer", "enum": [1, 2, 3] },
+          "a": { "type": "number" },
+          "b": { "type": "number" }
+        }
+      },
+      "tranche_cv": {
+        "type": "object",
+        "required": ["cv_min", "cv_max", "formules"],
+        "additionalProperties": false,
+        "properties": {
+          "cv_min": { "type": ["number", "null"] },
+          "cv_max": { "type": ["number", "null"] },
+          "formules": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": { "$ref": "#/$defs/formule" }
+          }
+        }
+      },
+      "famille": {
+        "type": "object",
+        "required": ["segments", "tranches_cv"],
+        "additionalProperties": false,
+        "properties": {
+          "segments": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": { "$ref": "#/$defs/segment" }
+          },
+          "tranches_cv": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/tranche_cv" }
+          }
+        }
+      }
+    }
+  }
+  

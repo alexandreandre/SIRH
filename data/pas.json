@@ -1,0 +1,279 @@
+{
+  "meta": {
+    "last_scraped": "2025-09-04T16:16:37Z",
+    "generator": "scripts/PAS/orchestrator.py",
+    "source": [
+      {
+        "url": "https://bofip.impots.gouv.fr/bofip/11255-PGP.html/identifiant%3DBOI-BAREME-000037-20250410",
+        "label": "BOFIP - Barème du prélèvement à la source",
+        "date_doc": ""
+      },
+      {
+        "url": "google_search:?q=BOFiP+barème+taux+neutre+prélèvement+à+la+source+actuel+mensuel",
+        "label": "Recherche Google + Extraction AI",
+        "date_doc": ""
+      }
+    ],
+    "hash": "5b4afc8f41d70250d0f253eb476e9e4d86bce5b00f31ad23f2e062791fa1ee67"
+  },
+  "baremes": [
+    {
+      "periode": "mensuel_2025",
+      "zone": "metropole",
+      "tranches": [
+        {
+          "plafond": 1620.0,
+          "taux": 0.0
+        },
+        {
+          "plafond": 1683.0,
+          "taux": 0.005
+        },
+        {
+          "plafond": 1791.0,
+          "taux": 0.013
+        },
+        {
+          "plafond": 1911.0,
+          "taux": 0.021
+        },
+        {
+          "plafond": 2042.0,
+          "taux": 0.029
+        },
+        {
+          "plafond": 2151.0,
+          "taux": 0.035
+        },
+        {
+          "plafond": 2294.0,
+          "taux": 0.041
+        },
+        {
+          "plafond": 2714.0,
+          "taux": 0.053
+        },
+        {
+          "plafond": 3107.0,
+          "taux": 0.075
+        },
+        {
+          "plafond": 3539.0,
+          "taux": 0.099
+        },
+        {
+          "plafond": 3983.0,
+          "taux": 0.119
+        },
+        {
+          "plafond": 4648.0,
+          "taux": 0.138
+        },
+        {
+          "plafond": 5574.0,
+          "taux": 0.158
+        },
+        {
+          "plafond": 6974.0,
+          "taux": 0.179
+        },
+        {
+          "plafond": 8711.0,
+          "taux": 0.2
+        },
+        {
+          "plafond": 12091.0,
+          "taux": 0.24
+        },
+        {
+          "plafond": 16376.0,
+          "taux": 0.28
+        },
+        {
+          "plafond": 25706.0,
+          "taux": 0.33
+        },
+        {
+          "plafond": 55062.0,
+          "taux": 0.38
+        },
+        {
+          "plafond": null,
+          "taux": 0.43
+        }
+      ]
+    },
+    {
+      "periode": "mensuel_2025",
+      "zone": "guadeloupe_reunion_martinique",
+      "tranches": [
+        {
+          "plafond": 1858.0,
+          "taux": 0.0
+        },
+        {
+          "plafond": 1971.0,
+          "taux": 0.005
+        },
+        {
+          "plafond": 2171.0,
+          "taux": 0.013
+        },
+        {
+          "plafond": 2371.0,
+          "taux": 0.021
+        },
+        {
+          "plafond": 2618.0,
+          "taux": 0.029
+        },
+        {
+          "plafond": 2761.0,
+          "taux": 0.035
+        },
+        {
+          "plafond": 2855.0,
+          "taux": 0.041
+        },
+        {
+          "plafond": 3142.0,
+          "taux": 0.053
+        },
+        {
+          "plafond": 3885.0,
+          "taux": 0.075
+        },
+        {
+          "plafond": 4971.0,
+          "taux": 0.099
+        },
+        {
+          "plafond": 5646.0,
+          "taux": 0.119
+        },
+        {
+          "plafond": 6540.0,
+          "taux": 0.138
+        },
+        {
+          "plafond": 7836.0,
+          "taux": 0.158
+        },
+        {
+          "plafond": 8711.0,
+          "taux": 0.179
+        },
+        {
+          "plafond": 9900.0,
+          "taux": 0.2
+        },
+        {
+          "plafond": 13615.0,
+          "taux": 0.24
+        },
+        {
+          "plafond": 18090.0,
+          "taux": 0.28
+        },
+        {
+          "plafond": 27610.0,
+          "taux": 0.33
+        },
+        {
+          "plafond": 60350.0,
+          "taux": 0.38
+        },
+        {
+          "plafond": null,
+          "taux": 0.43
+        }
+      ]
+    },
+    {
+      "periode": "mensuel_2025",
+      "zone": "guyane_mayotte",
+      "tranches": [
+        {
+          "plafond": 1990.0,
+          "taux": 0.0
+        },
+        {
+          "plafond": 2151.0,
+          "taux": 0.005
+        },
+        {
+          "plafond": 2398.0,
+          "taux": 0.013
+        },
+        {
+          "plafond": 2704.0,
+          "taux": 0.021
+        },
+        {
+          "plafond": 2808.0,
+          "taux": 0.029
+        },
+        {
+          "plafond": 2904.0,
+          "taux": 0.035
+        },
+        {
+          "plafond": 2999.0,
+          "taux": 0.041
+        },
+        {
+          "plafond": 3332.0,
+          "taux": 0.053
+        },
+        {
+          "plafond": 4598.0,
+          "taux": 0.075
+        },
+        {
+          "plafond": 5951.0,
+          "taux": 0.099
+        },
+        {
+          "plafond": 6712.0,
+          "taux": 0.119
+        },
+        {
+          "plafond": 7788.0,
+          "taux": 0.138
+        },
+        {
+          "plafond": 8567.0,
+          "taux": 0.158
+        },
+        {
+          "plafond": 9492.0,
+          "taux": 0.179
+        },
+        {
+          "plafond": 11016.0,
+          "taux": 0.2
+        },
+        {
+          "plafond": 14820.0,
+          "taux": 0.24
+        },
+        {
+          "plafond": 18850.0,
+          "taux": 0.28
+        },
+        {
+          "plafond": 30210.0,
+          "taux": 0.33
+        },
+        {
+          "plafond": 63767.0,
+          "taux": 0.38
+        },
+        {
+          "plafond": null,
+          "taux": 0.43
+        }
+      ]
+    }
+  ]
+}

@@ -212,8 +212,11 @@
     }
   },
   "SECURITE_SOCIALE_2025": {
-    "indemnites_journalieres_maladie": {
-      "plafond_ij_base": null
+    "plafonds_indemnites_journalieres": {
+      "maladie": 41.47,
+      "maternite_paternite": 101.94,
+      "at_mp": 235.69,
+      "at_mp_majoree": 314.25
     }
   }
 }

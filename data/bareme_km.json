@@ -1,0 +1,274 @@
+{
+  "BAREME_KM": [
+    {
+      "id": "baremes_km",
+      "libelle": "Barème kilométrique 2025",
+      "annee": 2025,
+      "vehicules": {
+        "voitures": {
+          "base": "distance_km",
+          "segments": [
+            {
+              "d_min": 0,
+              "d_max": 5000
+            },
+            {
+              "d_min": 5001,
+              "d_max": 20000
+            },
+            {
+              "d_min": 20001,
+              "d_max": null
+            }
+          ],
+          "tranches_cv": [
+            {
+              "cv_min": null,
+              "cv_max": 3,
+              "formules": [
+                {
+                  "segment": 1,
+                  "a": 0.529,
+                  "b": 0.0
+                },
+                {
+                  "segment": 2,
+                  "a": 0.316,
+                  "b": 1065.0
+                },
+                {
+                  "segment": 3,
+                  "a": 0.37,
+                  "b": 0.0
+                }
+              ]
+            },
+            {
+              "cv_min": 4,
+              "cv_max": 4,
+              "formules": [
+                {
+                  "segment": 1,
+                  "a": 0.606,
+                  "b": 0.0
+                },
+                {
+                  "segment": 2,
+                  "a": 0.34,
+                  "b": 1330.0
+                },
+                {
+                  "segment": 3,
+                  "a": 0.407,
+                  "b": 0.0
+                }
+              ]
+            },
+            {
+              "cv_min": 5,
+              "cv_max": 5,
+              "formules": [
+                {
+                  "segment": 1,
+                  "a": 0.636,
+                  "b": 0.0
+                },
+                {
+                  "segment": 2,
+                  "a": 0.357,
+                  "b": 1395.0
+                },
+                {
+                  "segment": 3,
+                  "a": 0.427,
+                  "b": 0.0
+                }
+              ]
+            },
+            {
+              "cv_min": 6,
+              "cv_max": 6,
+              "formules": [
+                {
+                  "segment": 1,
+                  "a": 0.665,
+                  "b": 0.0
+                },
+                {
+                  "segment": 2,
+                  "a": 0.374,
+                  "b": 1457.0
+                },
+                {
+                  "segment": 3,
+                  "a": 0.447,
+                  "b": 0.0
+                }
+              ]
+            },
+            {
+              "cv_min": 7,
+              "cv_max": null,
+              "formules": [
+                {
+                  "segment": 1,
+                  "a": 0.697,
+                  "b": 0.0
+                },
+                {
+                  "segment": 2,
+                  "a": 0.394,
+                  "b": 1515.0
+                },
+                {
+                  "segment": 3,
+                  "a": 0.47,
+                  "b": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "motocyclettes": {
+          "base": "distance_km",
+          "segments": [
+            {
+              "d_min": 0,
+              "d_max": 3000
+            },
+            {
+              "d_min": 3001,
+              "d_max": 6000
+            },
+            {
+              "d_min": 6001,
+              "d_max": null
+            }
+          ],
+          "tranches_cv": [
+            {
+              "cv_min": 1,
+              "cv_max": 2,
+              "formules": [
+                {
+                  "segment": 1,
+                  "a": 0.395,
+                  "b": 0.0
+                },
+                {
+                  "segment": 2,
+                  "a": 0.099,
+                  "b": 891.0
+                },
+                {
+                  "segment": 3,
+                  "a": 0.248,
+                  "b": 0.0
+                }
+              ]
+            },
+            {
+              "cv_min": 3,
+              "cv_max": 5,
+              "formules": [
+                {
+                  "segment": 1,
+                  "a": 0.468,
+                  "b": 0.0
+                },
+                {
+                  "segment": 2,
+                  "a": 0.082,
+                  "b": 1158.0
+                },
+                {
+                  "segment": 3,
+                  "a": 0.275,
+                  "b": 0.0
+                }
+              ]
+            },
+            {
+              "cv_min": 6,
+              "cv_max": null,
+              "formules": [
+                {
+                  "segment": 1,
+                  "a": 0.606,
+                  "b": 0.0
+                },
+                {
+                  "segment": 2,
+                  "a": 0.079,
+                  "b": 1583.0
+                },
+                {
+                  "segment": 3,
+                  "a": 0.343,
+                  "b": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        "cyclomoteurs": {
+          "base": "distance_km",
+          "segments": [
+            {
+              "d_min": 0,
+              "d_max": 3000
+            },
+            {
+              "d_min": 3001,
+              "d_max": 6000
+            },
+            {
+              "d_min": 6001,
+              "d_max": null
+            }
+          ],
+          "tranches_cv": [
+            {
+              "cv_min": null,
+              "cv_max": null,
+              "formules": [
+                {
+                  "segment": 1,
+                  "a": 0.315,
+                  "b": 0.0
+                },
+                {
+                  "segment": 2,
+                  "a": 0.079,
+                  "b": 711.0
+                },
+                {
+                  "segment": 3,
+                  "a": 0.198,
+                  "b": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "meta": {
+    "last_scraped": "2025-09-04T16:13:56Z",
+    "hash": "a031fe4d66acbadad5fcb627900d454c665eb6df4a2075e3b82cc187c28dd400",
+    "source": [
+      {
+        "url": "https://www.service-public.fr/particuliers/actualites/A14686",
+        "label": "Service-Public.fr",
+        "date_doc": ""
+      },
+      {
+        "url": "https://www.legisocial.fr/reperes-sociaux/bareme-kilometrique-2025.html",
+        "label": "LégiSocial",
+        "date_doc": ""
+      }
+    ],
+    "generator": "bareme-indemnite-kilometrique/orchestrator.py"
+  }
+}

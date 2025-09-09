@@ -1,4 +1,4 @@
-# scripts/AGS_LegiSocial.py (Version finale avec le bon parsing)
+# scripts/AGS_LegiSocial.py 
 
 import json
 import re

@@ -1,0 +1,93 @@
+{
+  "_commentaire": "Ce fichier contient toutes les informations d'un salarié, de son contrat et de sa rémunération.",
+  "salarie": {
+    "nom": "BUGNY",
+    "prenom": "Michel",
+    "nir": "185070112345678",
+    "date_naissance": "1985-07-15",
+    "lieu_naissance": "01300 Belley",
+    "nationalite": "Française",
+    "adresse": {
+      "rue": "1 Route de Contrevoz",
+      "code_postal": "01300",
+      "ville": "Chazey Bons"
+    },
+    "coordonnees_bancaires": {
+      "iban": "FR7630006000011234567890189",
+      "bic": "AGRIFRPP801"
+    }
+  },
+  "contrat": {
+    "date_entree": "2022-12-01",
+    "type_contrat": "CDI",
+    "statut": "Non-Cadre",
+    "emploi": "Logisticien Polyvalent",
+    "periode_essai": {
+      "duree_initiale": 2,
+      "unite": "mois",
+      "renouvellement_possible": true
+    },
+    "temps_travail": {
+      "is_temps_partiel": false,
+      "duree_hebdomadaire": 39
+    }
+  },
+  "remuneration": {
+    "salaire_de_base": {
+      "type": "mensuel",
+      "valeur": 2365.66
+    },
+    "classification_conventionnelle": {
+      "_commentaire": "Classification selon la convention collective de la métallurgie (IDCC 3248).",
+      "groupe_emploi": "C",
+      "classe_emploi": 6,
+      "coefficient": 240
+    },
+    "elements_variables": {
+      "_commentaire": "Primes et autres éléments variables de la rémunération.",
+      "prime_anciennete": 0.0,
+      "prime_vacances": true,
+      "treizieme_mois": false
+    },
+    "avantages_en_nature": {
+      "_commentaire": "Décrit la situation du salarié, le calcul se fait dans le moteur.",
+      "repas": {
+        "nombre_par_mois": 0
+      },
+      "logement": {
+        "beneficie": false,
+        "nombre_pieces_principales": 0
+      },
+      "vehicule": {
+        "beneficie": false
+      }
+    }
+  },
+  "specificites_paie": {
+    "is_alsace_moselle": false,
+    "prelevement_a_la_source": {
+      "type_taux": "personnalise",
+      "taux": 3.4
+    },
+    "transport": {
+      "remboursement_abonnement_mensuel": 0
+    },
+    "titres_restaurant": {
+      "beneficie": true,
+      "valeur_faciale": 9.00,
+      "part_patronale": 4.50,
+      "nombre_par_mois": 0
+    },
+    "mutuelle": {
+      "_commentaire": "Détails de la mutuelle spécifique au contrat du salarié.",
+      "adhesion": true,
+      "option": "Isolé - Salarié seul",
+      "ayants_droit": 0,
+      "montant_salarial": 31.58,
+      "montant_patronal": 31.57
+    },
+    "prevoyance": {
+      "adhesion": true
+    }
+  }
+}

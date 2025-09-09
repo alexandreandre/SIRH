@@ -1,0 +1,56 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "schemas/pas.schema.json",
+    "title": "pas.json",
+    "type": "object",
+    "required": ["meta", "bareme"],
+    "additionalProperties": false,
+    "properties": {
+      "meta": {
+        "type": "object",
+        "required": ["last_scraped", "hash", "source", "generator"],
+        "additionalProperties": false,
+        "properties": {
+          "last_scraped": { "type": "string" },
+          "hash": { "type": "string" },
+          "source": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "url": { "type": "string" },
+                "label": { "type": "string" },
+                "date_doc": { "type": "string" }
+              },
+              "required": ["url"]
+            }
+          },
+          "generator": { "type": "string" }
+        }
+      },
+      "bareme": {
+        "type": "object",
+        "required": ["periode", "zone", "tranches"],
+        "additionalProperties": false,
+        "properties": {
+          "periode": { "type": "string" },
+          "zone": { "type": "string" },
+          "tranches": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["plafond", "taux"],
+              "additionalProperties": false,
+              "properties": {
+                "plafond": { "type": ["number", "null"] },
+                "taux": { "type": "number", "minimum": 0, "maximum": 1 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

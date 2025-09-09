@@ -1,0 +1,71 @@
+{
+  "dataset": "donnees_reglementaires",
+  "version": "",
+  "updated_at": "",
+  "generator": "",
+  "files": [
+    {
+      "name": "cotisations.json",
+      "hash": "",
+      "schema": "schemas/cotisations.schema.json",
+      "size": 0,
+      "last_scraped": ""
+    },
+    {
+      "name": "pas.json",
+      "hash": "",
+      "schema": "schemas/pas.schema.json",
+      "size": 0,
+      "last_scraped": ""
+    },
+    {
+      "name": "baremes_km.json",
+      "hash": "",
+      "schema": "schemas/baremes_km.schema.json",
+      "size": 0,
+      "last_scraped": ""
+    },
+    {
+      "name": "frais_pro.json",
+      "hash": "",
+      "schema": "schemas/frais_pro.schema.json",
+      "size": 0,
+      "last_scraped": ""
+    },
+    {
+      "name": "secu.json",
+      "hash": "",
+      "schema": "schemas/secu.schema.json",
+      "size": 0,
+      "last_scraped": ""
+    }
+  ],
+  "sources": [],
+  "build": {
+    "started_at": "",
+    "ended_at": "",
+    "status": "",
+    "errors": []
+  },
+  "notes": "",
+  "items": {
+    "csg": {
+      "updated_at": "2025-08-31T14:42:15.259617Z",
+      "hash": "006bf66f2012967ab324d23c834b6e1cd441f33b056e81fbd5db2b0207505cf8",
+      "sources": [
+        {
+          "label": "URSSAF",
+          "url": "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-secteur-prive.html",
+          "hash": "006bf66f2012967ab324d23c834b6e1cd441f33b056e81fbd5db2b0207505cf8"
+        },
+        {
+          "label": "LégiSocial",
+          "url": "https://www.legisocial.fr/reperes-sociaux/taux-cotisations-sociales-urssaf-2025.html",
+          "hash": "becd7b7ff927dc5af583ba4f6f3b38615a0548a689ba21376fcbf7f56b81f912"
+        }
+      ],
+      "generator": "scripts/CSG/orchestrator.py",
+      "version": 1
+    }
+  }
+}

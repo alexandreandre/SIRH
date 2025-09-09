@@ -32,14 +32,38 @@
     "retraite_comp_t1": {
       "libelle": "Retraite Complémentaire Tranche 1 (AGIRC-ARCCO)",
       "base": "plafond_ss",
-      "salarial": null,
-      "patronal": null
+      "salarial": 0.0315,
+      "patronal": 0.0472
+    },
+    "retraite_comp_t2": {
+      "libelle": "Retraite Complémentaire Tranche 2 (AGIRC-ARCCO)",
+      "base": "tranche_2",
+      "salarial": 0.0864,
+      "patronal": 0.1295
+    },
+    "ceg_t2": {
+      "libelle": "Contribution d'Equilibre Général (CEG) T2",
+      "base": "tranche_2",
+      "salarial": 0.0108,
+      "patronal": 0.0162
+    },
+    "cet": {
+      "libelle": "Contribution d'Equilibre Technique (CET)",
+      "base": "brut_sup_plafond",
+      "salarial": 0.0014,
+      "patronal": 0.0021
+    },
+    "apec": {
+      "libelle": "Cotisation APEC (Cadres)",
+      "base": "brut_cadre_4_plafonds",
+      "salarial": 0.00024,
+      "patronal": 0.00036
     },
     "ceg_t1": {
       "libelle": "Contribution d'Equilibre Général (CEG) T1",
       "base": "plafond_ss",
-      "salarial": null,
-      "patronal": null
+      "salarial": 0.0086,
+      "patronal": 0.0129
     },
     "allocations_familiales": {
       "libelle": "Allocations familiales",
@@ -106,6 +130,513 @@
       "base": "heures_sup",
       "salarial": null,
       "patronal": null
+    },
+    "pas_bareme_taux_neutre_2025": {
+      "libelle": "Barème taux neutre PAS 2025 (mensuel, métropole)",
+      "base": "net_imposable_mensuel",
+      "tranches": [
+        {
+          "plafond": 1620.0,
+          "taux": 0.0
+        },
+        {
+          "plafond": 1683.0,
+          "taux": 0.005
+        },
+        {
+          "plafond": 1791.0,
+          "taux": 0.013
+        },
+        {
+          "plafond": 1911.0,
+          "taux": 0.021
+        },
+        {
+          "plafond": 2042.0,
+          "taux": 0.029
+        },
+        {
+          "plafond": 2151.0,
+          "taux": 0.035
+        },
+        {
+          "plafond": 2294.0,
+          "taux": 0.041
+        },
+        {
+          "plafond": 2714.0,
+          "taux": 0.053
+        },
+        {
+          "plafond": 3107.0,
+          "taux": 0.075
+        },
+        {
+          "plafond": 3539.0,
+          "taux": 0.099
+        },
+        {
+          "plafond": 3983.0,
+          "taux": 0.119
+        },
+        {
+          "plafond": 4648.0,
+          "taux": 0.138
+        },
+        {
+          "plafond": 5574.0,
+          "taux": 0.158
+        },
+        {
+          "plafond": 6974.0,
+          "taux": 0.179
+        },
+        {
+          "plafond": 8711.0,
+          "taux": 0.2
+        },
+        {
+          "plafond": 12091.0,
+          "taux": 0.24
+        },
+        {
+          "plafond": 16376.0,
+          "taux": 0.28
+        },
+        {
+          "plafond": 25706.0,
+          "taux": 0.33
+        },
+        {
+          "plafond": 55062.0,
+          "taux": 0.38
+        },
+        {
+          "plafond": null,
+          "taux": 0.43
+        }
+      ]
+    },
+    "pas_bareme_taux_neutre_2025_outremer_grm": {
+      "libelle": "Barème taux neutre PAS 2025 (Guadeloupe, Réunion, Martinique)",
+      "base": "net_imposable_mensuel",
+      "tranches": [
+        {
+          "plafond": 1858.0,
+          "taux": 0.0
+        },
+        {
+          "plafond": 1971.0,
+          "taux": 0.005
+        },
+        {
+          "plafond": 2171.0,
+          "taux": 0.013
+        },
+        {
+          "plafond": 2371.0,
+          "taux": 0.021
+        },
+        {
+          "plafond": 2618.0,
+          "taux": 0.029
+        },
+        {
+          "plafond": 2761.0,
+          "taux": 0.035
+        },
+        {
+          "plafond": 2855.0,
+          "taux": 0.041
+        },
+        {
+          "plafond": 3142.0,
+          "taux": 0.053
+        },
+        {
+          "plafond": 3885.0,
+          "taux": 0.075
+        },
+        {
+          "plafond": 4971.0,
+          "taux": 0.099
+        },
+        {
+          "plafond": 5646.0,
+          "taux": 0.119
+        },
+        {
+          "plafond": 6540.0,
+          "taux": 0.138
+        },
+        {
+          "plafond": 7836.0,
+          "taux": 0.158
+        },
+        {
+          "plafond": 8711.0,
+          "taux": 0.179
+        },
+        {
+          "plafond": 9900.0,
+          "taux": 0.2
+        },
+        {
+          "plafond": 13615.0,
+          "taux": 0.24
+        },
+        {
+          "plafond": 18090.0,
+          "taux": 0.28
+        },
+        {
+          "plafond": 27610.0,
+          "taux": 0.33
+        },
+        {
+          "plafond": 60350.0,
+          "taux": 0.38
+        },
+        {
+          "plafond": null,
+          "taux": 0.43
+        }
+      ]
+    },
+    "pas_bareme_taux_neutre_2025_outremer_gm": {
+      "libelle": "Barème taux neutre PAS 2025 (Guyane, Mayotte)",
+      "base": "net_imposable_mensuel",
+      "tranches": [
+        {
+          "plafond": 1990.0,
+          "taux": 0.0
+        },
+        {
+          "plafond": 2151.0,
+          "taux": 0.005
+        },
+        {
+          "plafond": 2398.0,
+          "taux": 0.013
+        },
+        {
+          "plafond": 2704.0,
+          "taux": 0.021
+        },
+        {
+          "plafond": 2808.0,
+          "taux": 0.029
+        },
+        {
+          "plafond": 2904.0,
+          "taux": 0.035
+        },
+        {
+          "plafond": 2999.0,
+          "taux": 0.041
+        },
+        {
+          "plafond": 3332.0,
+          "taux": 0.053
+        },
+        {
+          "plafond": 4598.0,
+          "taux": 0.075
+        },
+        {
+          "plafond": 5951.0,
+          "taux": 0.099
+        },
+        {
+          "plafond": 6712.0,
+          "taux": 0.119
+        },
+        {
+          "plafond": 7788.0,
+          "taux": 0.138
+        },
+        {
+          "plafond": 8567.0,
+          "taux": 0.158
+        },
+        {
+          "plafond": 9492.0,
+          "taux": 0.179
+        },
+        {
+          "plafond": 11016.0,
+          "taux": 0.2
+        },
+        {
+          "plafond": 14820.0,
+          "taux": 0.24
+        },
+        {
+          "plafond": 18850.0,
+          "taux": 0.28
+        },
+        {
+          "plafond": 30210.0,
+          "taux": 0.33
+        },
+        {
+          "plafond": 63767.0,
+          "taux": 0.38
+        },
+        {
+          "plafond": null,
+          "taux": 0.43
+        }
+      ]
+    },
+    "bareme_kilometrique_voitures_2025": {
+      "libelle": "Barème kilométrique voitures 2025 (Service-Public)",
+      "base": "distance_km",
+      "segments": [
+        {
+          "d_min": 0,
+          "d_max": 5000
+        },
+        {
+          "d_min": 5001,
+          "d_max": 20000
+        },
+        {
+          "d_min": 20001,
+          "d_max": null
+        }
+      ],
+      "tranches_cv": [
+        {
+          "cv_min": null,
+          "cv_max": 3,
+          "formules": [
+            {
+              "segment": 1,
+              "a": 0.41,
+              "b": 824.0
+            },
+            {
+              "segment": 2,
+              "a": 0.245,
+              "b": 0.0
+            },
+            {
+              "segment": 3,
+              "a": 0.286,
+              "b": 0.0
+            }
+          ]
+        },
+        {
+          "cv_min": 4,
+          "cv_max": 4,
+          "formules": [
+            {
+              "segment": 1,
+              "a": 0.493,
+              "b": 1082.0
+            },
+            {
+              "segment": 2,
+              "a": 0.277,
+              "b": 0.0
+            },
+            {
+              "segment": 3,
+              "a": 0.332,
+              "b": 0.0
+            }
+          ]
+        },
+        {
+          "cv_min": 5,
+          "cv_max": 5,
+          "formules": [
+            {
+              "segment": 1,
+              "a": 0.543,
+              "b": 1188.0
+            },
+            {
+              "segment": 2,
+              "a": 0.305,
+              "b": 0.0
+            },
+            {
+              "segment": 3,
+              "a": 0.364,
+              "b": 0.0
+            }
+          ]
+        },
+        {
+          "cv_min": 6,
+          "cv_max": 6,
+          "formules": [
+            {
+              "segment": 1,
+              "a": 0.568,
+              "b": 1244.0
+            },
+            {
+              "segment": 2,
+              "a": 0.32,
+              "b": 0.0
+            },
+            {
+              "segment": 3,
+              "a": 0.382,
+              "b": 0.0
+            }
+          ]
+        },
+        {
+          "cv_min": 7,
+          "cv_max": null,
+          "formules": [
+            {
+              "segment": 1,
+              "a": 0.595,
+              "b": 1288.0
+            },
+            {
+              "segment": 2,
+              "a": 0.337,
+              "b": 0.0
+            },
+            {
+              "segment": 3,
+              "a": 0.401,
+              "b": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "bareme_kilometrique_motocyclettes_2025": {
+      "libelle": "Barème kilométrique motocyclettes 2025 (Service-Public)",
+      "base": "distance_km",
+      "segments": [
+        {
+          "d_min": 0,
+          "d_max": 3000
+        },
+        {
+          "d_min": 3001,
+          "d_max": 6000
+        },
+        {
+          "d_min": 6001,
+          "d_max": null
+        }
+      ],
+      "tranches_cv": [
+        {
+          "cv_min": 1,
+          "cv_max": 2,
+          "formules": [
+            {
+              "segment": 1,
+              "a": 0.338,
+              "b": 760.0
+            },
+            {
+              "segment": 2,
+              "a": 0.084,
+              "b": 0.0
+            },
+            {
+              "segment": 3,
+              "a": 0.211,
+              "b": 0.0
+            }
+          ]
+        },
+        {
+          "cv_min": 3,
+          "cv_max": 5,
+          "formules": [
+            {
+              "segment": 1,
+              "a": 0.4,
+              "b": 989.0
+            },
+            {
+              "segment": 2,
+              "a": 0.07,
+              "b": 0.0
+            },
+            {
+              "segment": 3,
+              "a": 0.235,
+              "b": 0.0
+            }
+          ]
+        },
+        {
+          "cv_min": 6,
+          "cv_max": null,
+          "formules": [
+            {
+              "segment": 1,
+              "a": 0.518,
+              "b": 1351.0
+            },
+            {
+              "segment": 2,
+              "a": 0.067,
+              "b": 0.0
+            },
+            {
+              "segment": 3,
+              "a": 0.292,
+              "b": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "bareme_kilometrique_cyclomoteurs_2025": {
+      "libelle": "Barème kilométrique cyclomoteurs 2025 (Service-Public)",
+      "base": "distance_km",
+      "segments": [
+        {
+          "d_min": 0,
+          "d_max": 3000
+        },
+        {
+          "d_min": 3001,
+          "d_max": 6000
+        },
+        {
+          "d_min": 6001,
+          "d_max": null
+        }
+      ],
+      "tranches_cv": [
+        {
+          "cv_min": null,
+          "cv_max": null,
+          "formules": [
+            {
+              "segment": 1,
+              "a": 0.269,
+              "b": 412.0
+            },
+            {
+              "segment": 2,
+              "a": 0.063,
+              "b": 0.0
+            },
+            {
+              "segment": 3,
+              "a": 0.146,
+              "b": 0.0
+            }
+          ]
+        }
+      ]
     }
   }
 }

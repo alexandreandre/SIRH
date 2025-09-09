@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "last_scraped": "2025-09-04T15:47:17Z",
+    "generator": "scripts/SMIC/orchestrator.py",
+    "source": [
+      {
+        "url": "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/montant-smic.html",
+        "label": "URSSAF - Montant du Smic",
+        "date_doc": ""
+      },
+      {
+        "url": "google_search:?q=montant+smic+horaire+brut+URSSAF+2025",
+        "label": "Recherche Google + Extraction AI",
+        "date_doc": ""
+      }
+    ],
+    "hash": "92e328b1793ebf68fb79e863cff734d822f2d8f2c52b9f44202a7efe2cd5ac0e"
+  },
+  "smic_horaire": {
+    "cas_general": 11.88,
+    "jeune_17_ans": 10.69,
+    "jeune_moins_17_ans": 9.5
+  }
+}

@@ -1,0 +1,152 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "schemas/frais_pro.schema.json",
+    "title": "frais_pro.json",
+    "type": "object",
+    "required": ["meta", "repas_indemnites", "petit_deplacement_bareme", "grand_deplacement", "mutation_professionnelle", "mobilite_durable", "teletravail"],
+    "additionalProperties": false,
+    "properties": {
+      "meta": {
+        "type": "object",
+        "required": ["last_scraped", "hash", "source", "generator"],
+        "additionalProperties": false,
+        "properties": {
+          "last_scraped": { "type": "string" },
+          "hash": { "type": "string" },
+          "source": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "url": { "type": "string" },
+                "label": { "type": "string" },
+                "date_doc": { "type": "string" }
+              },
+              "required": ["url"]
+            }
+          },
+          "generator": { "type": "string" }
+        }
+      },
+      "repas_indemnites": {
+        "type": "object",
+        "required": ["sur_lieu_travail", "hors_locaux_avec_restaurant", "hors_locaux_sans_restaurant"],
+        "additionalProperties": false,
+        "properties": {
+          "sur_lieu_travail": { "type": "number" },
+          "hors_locaux_avec_restaurant": { "type": "number" },
+          "hors_locaux_sans_restaurant": { "type": "number" }
+        }
+      },
+      "petit_deplacement_bareme": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "grand_deplacement": {
+        "type": "object",
+        "required": ["metropole", "outre_mer_groupe1", "outre_mer_groupe2"],
+        "additionalProperties": false,
+        "properties": {
+          "metropole": {
+            "type": "array",
+            "items": { "type": "object", "additionalProperties": true }
+          },
+          "outre_mer_groupe1": {
+            "type": "array",
+            "items": { "type": "object", "additionalProperties": true }
+          },
+          "outre_mer_groupe2": {
+            "type": "array",
+            "items": { "type": "object", "additionalProperties": true }
+          }
+        }
+      },
+      "mutation_professionnelle": {
+        "type": "object",
+        "required": ["hebergement_provisoire", "hebergement_definitif"],
+        "additionalProperties": false,
+        "properties": {
+          "hebergement_provisoire": {
+            "type": "object",
+            "required": ["montant_par_jour"],
+            "additionalProperties": false,
+            "properties": {
+              "montant_par_jour": { "type": "number" }
+            }
+          },
+          "hebergement_definitif": {
+            "type": "object",
+            "required": ["frais_installation", "majoration_par_enfant", "plafond_total"],
+            "additionalProperties": false,
+            "properties": {
+              "frais_installation": { "type": "number" },
+              "majoration_par_enfant": { "type": "number" },
+              "plafond_total": { "type": "number" }
+            }
+          }
+        }
+      },
+      "mobilite_durable": {
+        "type": "object",
+        "required": ["employeurs_prives", "employeurs_publics"],
+        "additionalProperties": false,
+        "properties": {
+          "employeurs_prives": {
+            "type": "object",
+            "required": ["limite_base", "limite_cumul_transport_public", "limite_cumul_carburant_total", "limite_cumul_carburant_part_carburant"],
+            "additionalProperties": false,
+            "properties": {
+              "limite_base": { "type": "number" },
+              "limite_cumul_transport_public": { "type": "number" },
+              "limite_cumul_carburant_total": { "type": "number" },
+              "limite_cumul_carburant_part_carburant": { "type": "number" }
+            }
+          },
+          "employeurs_publics": {
+            "type": "array",
+            "items": { "type": "object", "additionalProperties": true }
+          }
+        }
+      },
+      "teletravail": {
+        "type": "object",
+        "required": ["indemnite_sans_accord", "indemnite_avec_accord", "materiel_informatique_perso"],
+        "additionalProperties": false,
+        "properties": {
+          "indemnite_sans_accord": {
+            "type": "object",
+            "required": ["par_jour", "limite_mensuelle", "par_mois_pour_1_jour_semaine"],
+            "additionalProperties": false,
+            "properties": {
+              "par_jour": { "type": "number" },
+              "limite_mensuelle": { "type": "number" },
+              "par_mois_pour_1_jour_semaine": { "type": "number" }
+            }
+          },
+          "indemnite_avec_accord": {
+            "type": "object",
+            "required": ["par_jour", "limite_mensuelle", "par_mois_pour_1_jour_semaine"],
+            "additionalProperties": false,
+            "properties": {
+              "par_jour": { "type": "number" },
+              "limite_mensuelle": { "type": "number" },
+              "par_mois_pour_1_jour_semaine": { "type": "number" }
+            }
+          },
+          "materiel_informatique_perso": {
+            "type": "object",
+            "required": ["montant_mensuel"],
+            "additionalProperties": false,
+            "properties": {
+              "montant_mensuel": { "type": "number" }
+            }
+          }
+        }
+      }
+    }
+  }
+  

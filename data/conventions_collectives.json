@@ -1,0 +1,23 @@
+{
+  "idcc_0292": {
+    "prime_anciennete": {
+      "base_de_calcul": {
+        "methode": "pourcentage_salaire_de_base",
+        "valeur": 0.80
+      },
+      "description": "Pourcentage appliqué sur 80% du salaire de base réel.",
+      "bareme": [
+        { "annees_min": 3, "annees_max": 5, "taux": 0.03 },
+        { "annees_min": 6, "annees_max": 8, "taux": 0.06 },
+        { "annees_min": 9, "annees_max": 11, "taux": 0.09 },
+        { "annees_min": 12, "annees_max": 14, "taux": 0.12 },
+        { "annees_min": 15, "annees_max": null, "taux": 0.15 }
+      ]
+    },
+    "salaires_minima": [
+      { "coefficient": 700, "valeur": 1780.00 },
+      { "coefficient": 710, "valeur": 1795.61 },
+      { "coefficient": 720, "valeur": 1810.00 }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "last_scraped": "2025-09-04T16:15:23Z",
+    "hash": "e58b704922801cf3c97aa86a12e04dd583e85a2d42cb2880b639551657f6f4b2",
+    "source": [
+      {
+        "url": "https://www.ameli.fr/entreprise/vos-salaries/montants-reference/indemnites-journalieres-montants-maximum",
+        "label": "ameli.fr — IJ montants maximum",
+        "date_doc": ""
+      },
+      {
+        "url": "https://www.legisocial.fr/reperes-sociaux/indemnites-journalieres-de-securite-sociale-ijss-2025.html",
+        "label": "LégiSocial — IJSS 2025",
+        "date_doc": ""
+      },
+      {
+        "url": "https://www.ameli.fr/entreprise/vos-salaries/arret-de-travail/indemnites-journalieres",
+        "label": "Web + IA",
+        "date_doc": ""
+      }
+    ],
+    "generator": "IJmaladie/orchestrator.py"
+  },
+  "plafonds_indemnites_journalieres": {
+    "maladie": 41.47,
+    "maternite_paternite": 101.94,
+    "at_mp": 235.69,
+    "at_mp_majoree": 314.25
+  },
+  "pss": {
+    "annuel": 47100,
+    "trimestriel": 11775,
+    "mensuel": 3925,
+    "quinzaine": 1963,
+    "hebdomadaire": 906,
+    "journalier": 216,
+    "horaire": 29
+  }
+}

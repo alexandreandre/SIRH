@@ -1,0 +1,110 @@
+/* templates/style.css */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    font-size: 9pt;
+    color: #333;
+}
+
+h1, h2 {
+    color: #003366;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 12pt;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 25px 0;
+}
+
+#info-generales {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#info-entreprise, #info-salarie {
+    width: 48%;
+}
+
+#info-salarie p, #info-entreprise p {
+    margin: 5px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: left;
+    vertical-align: top;
+}
+
+thead {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* --- Classes de style pour les cellules et lignes --- */
+
+.numerique {
+    text-align: right;
+}
+
+.libelle {
+    width: 40%;
+}
+
+.subtotal-row {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.total-row {
+    background-color: #e9ecef;
+    border-top: 2px solid #333;
+}
+
+/* --- Section des résultats finaux --- */
+
+#resultat-final {
+    margin-top: 20px;
+    float: right;
+    width: 45%;
+}
+
+#resultat-final p {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+#resultat-final h2 {
+    font-size: 14pt;
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: none;
+}
+
+.total-employeur {
+    font-style: italic;
+    font-size: 8pt;
+    color: #666;
+}

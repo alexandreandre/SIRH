@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "last_scraped": "2025-09-05T15:20:53Z",
+    "hash": "ed500bf01f46e27da09e312f83f8f5a97c48595927aea656a71035d66b3f817b",
+    "source": [
+      {
+        "url": "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-cotisations-secteur-prive.html",
+        "label": "URSSAF - Taux de cotisations secteur privé",
+        "date_doc": ""
+      },
+      {
+        "url": "https://mon-entreprise.urssaf.fr/simulateurs/comparaison-r%C3%A9gimes-sociaux/SASU/salari%C3%A9/cotisations/contribution-au-dialogue-social",
+        "label": "Web + IA",
+        "date_doc": ""
+      }
+    ],
+    "generator": "scripts/dialoguesocial/orchestrator.py"
+  },
+  "cotisations": [
+    {
+      "id": "securite_sociale_maladie",
+      "libelle": "Sécurité sociale - Maladie, Maternité, Invalidité, Décès",
+      "base": "brut",
+      "salarial": null,
+      "patronal_plein": 0.13,
+      "patronal_reduit": 0.07,
+      "salarial_Alsace_Moselle": 0.013
+    },
+    {
+      "id": "at_mp",
+      "libelle": "Accidents du travail et maladies professionnelles",
+      "base": "brut",
+      "salarial": null,
+      "patronal": "specifique_entreprise"
+    },
+    {
+      "id": "retraite_secu_plafond",
+      "libelle": "Sécurité sociale Vieillesse plafonnée",
+      "base": "brut_plafonne",
+      "salarial": 0.069,
+      "patronal": 0.0855
+    },
+    {
+      "id": "retraite_secu_deplafond",
+      "libelle": "Sécurité sociale Vieillesse déplafonnée",
+      "base": "brut",
+      "salarial": 0.004,
+      "patronal": 0.0202
+    },
+    {
+      "id": "retraite_comp_t1",
+      "libelle": "Retraite Complémentaire Tranche 1 (AGIRC-ARRCO)",
+      "base": "brut_plafonne",
+      "salarial": 0.0315,
+      "patronal": 0.0472
+    },
+    {
+      "id": "retraite_comp_t2",
+      "libelle": "Retraite Complémentaire Tranche 2 (AGIRC-ARRCO)",
+      "base": "tranche_2",
+      "salarial": 0.0864,
+      "patronal": 0.1295
+    },
+    {
+      "id": "ceg_t1",
+      "libelle": "Contribution d'Équilibre Général (CEG) T1",
+      "base": "brut_plafonne",
+      "salarial": 0.0086,
+      "patronal": 0.0129
+    },
+    {
+      "id": "ceg_t2",
+      "libelle": "Contribution d'Équilibre Général (CEG) T2",
+      "base": "tranche_2",
+      "salarial": 0.0108,
+      "patronal": 0.0162
+    },
+    {
+      "id": "cet",
+      "libelle": "Contribution d'Équilibre Technique (CET)",
+      "base": "assiette_cet",
+      "salarial": 0.0014,
+      "patronal": 0.0021
+    },
+    {
+      "id": "apec",
+      "libelle": "Cotisation APEC (Cadres)",
+      "base": "brut_cadre_4_plafonds",
+      "salarial": 0.00024,
+      "patronal": 0.00036
+    },
+    {
+      "id": "allocations_familiales",
+      "libelle": "Allocations familiales",
+      "base": "brut",
+      "salarial": null,
+      "patronal": null,
+      "patronal_plein": 0.0525,
+      "patronal_reduit": 0.0345
+    },
+    {
+      "id": "assurance_chomage",
+      "libelle": "Assurance Chômage",
+      "base": "brut",
+      "salarial": null,
+      "patronal": 0.04
+    },
+    {
+      "id": "ags",
+      "libelle": "Cotisation AGS",
+      "base": "brut",
+      "salarial": null,
+      "patronal": 0.0025
+    },
+    {
+      "id": "csa",
+      "libelle": "Contribution Solidarité Autonomie (CSA)",
+      "base": "brut",
+      "salarial": null,
+      "patronal": 0.003
+    },
+    {
+      "id": "fnal",
+      "libelle": "Fonds National d’Aide au Logement (FNAL)",
+      "base": "brut",
+      "salarial": null,
+      "patronal": {
+        "taux_moins_50": 0.001,
+        "taux_50_et_plus": 0.005
+      }
+    },
+    {
+      "id": "CFP",
+      "libelle": "Contribution Formation Professionnelle",
+      "base": "brut",
+      "salarial": null,
+      "patronal": {
+        "taux_moins_11": 0.0055,
+        "taux_11_et_plus": 0.01
+      }
+    },
+    {
+      "id": "taxe_apprentissage",
+      "libelle": "Taxe d'Apprentissage (part principale)",
+      "base": "brut",
+      "salarial": null,
+      "patronal": {
+        "taux_metropole": 0.0059,
+        "taux_alsace_moselle": 0.0044
+      }
+    },
+    {
+      "id": "dialogue_social",
+      "libelle": "Contribution dialogue social",
+      "base": "brut",
+      "salarial": null,
+      "patronal": 0.00016
+    },
+    {
+      "id": "csg",
+      "libelle": "CSG/CRDS",
+      "base": "brut",
+      "salarial": {
+        "deductible": 0.068,
+        "non_deductible": 0.029
+      },
+      "patronal": null
+    },
+    {
+      "id": "taxe_apprentissage_solde",
+      "libelle": "Taxe d'Apprentissage (solde)",
+      "base": "brut",
+      "salarial": null,
+      "patronal": {
+        "taux_metropole": 0.0009,
+        "taux_alsace_moselle": 0.0
+      }
+    },
+    {
+      "id": "prevoyance_cadre",
+      "libelle": "Prévoyance Cadre Tranche 1",
+      "base": "brut_plafonne",
+      "salarial": null,
+      "patronal": 0.0150
+    },
+    {
+      "id": "prevoyance_non_cadre",
+      "libelle": "Prévoyance Non-Cadre Tranche 1",
+      "base": "brut_plafonne",
+      "salarial": 0.00465,
+      "patronal": 0.00465
+    },
+    {
+      "id": "versement_mobilite",
+      "libelle": "Versement mobilité",
+      "base": "brut",
+      "salarial": null,
+      "patronal": "specifique_entreprise"
+    }
+  ]
+}

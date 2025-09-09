@@ -1,0 +1,22 @@
+{
+  "id": "csa",
+  "type": "cotisation",
+  "libelle": "Contribution Solidarité Autonomie (CSA)",
+  "base": "brut",
+  "valeurs": {
+    "salarial": null,
+    "patronal": 0.003
+  },
+  "meta": {
+    "source": [
+      {
+        "url": "https://www.legisocial.fr/reperes-sociaux/taux-cotisations-sociales-urssaf-2025.html",
+        "label": "LégiSocial — Taux cotisations sociales URSSAF 2025",
+        "date_doc": ""
+      }
+    ],
+    "scraped_at": "2025-09-04T16:14:10Z",
+    "generator": "CSA_LegiSocial.py",
+    "method": "secondary"
+  }
+}

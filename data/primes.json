@@ -1,0 +1,31 @@
+{
+  "_commentaire": "Catalogue des primes, indemnités et gratifications possibles, avec leurs règles de soumission aux charges sociales.",
+  "primes": [
+    {
+      "id": "prime_exceptionnelle",
+      "libelle": "Prime Exceptionnelle",
+      "soumise_a_cotisations": true,
+      "soumise_a_impot": true
+    },
+    {
+      "id": "prime_partage_valeur",
+      "libelle": "Prime de Partage de la Valeur (PPV)",
+      "soumise_a_cotisations": false,
+      "soumise_a_impot": false,
+      "_commentaire": "Exonération sous conditions de montant et de rémunération. La logique exacte sera dans le moteur."
+    },
+    {
+      "id": "prime_anciennete",
+      "libelle": "Prime d'Ancienneté",
+      "soumise_a_cotisations": true,
+      "soumise_a_impot": true
+    },
+    {
+      "id": "indemnite_panier_repas",
+      "libelle": "Indemnité Panier Repas",
+      "soumise_a_cotisations": false,
+      "soumise_a_impot": false,
+      "_commentaire": "Exonération dans les limites fixées par l'URSSAF (voir frais_pro.json)."
+    }
+  ]
+}

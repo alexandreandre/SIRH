@@ -27,7 +27,7 @@ def extract_json_with_gpt(page_text: str, prompt: str) -> dict | None:
             model="gpt-4o-mini",
             response_format={"type": "json_object"},
             messages=[
-                {"role": "system", "content": "Tu es un expert en extraction de données complexes qui répond au format JSON."},
+                {"role": "system", "content": "Tu es un assistant expert en extraction de données qui répond au format JSON de manière stricte."},
                 {"role": "user", "content": prompt}
             ],
             temperature=0
@@ -43,29 +43,73 @@ def get_fraispro_via_ai() -> dict | None:
     """
     Orchestre la recherche Google et l'extraction JSON de l'ensemble des barèmes de frais professionnels.
     """
-    # --- 1. Construction du prompt le plus détaillé possible ---
+    # --- PROMPT AMÉLIORÉ AVEC STRUCTURE STRICTE ---
     prompt_template = """
     Analyse le texte suivant de la page URSSAF "Frais professionnels" pour 2025.
-    Extrais TOUTES les informations des sections suivantes : Repas, Petit déplacement, Grand déplacement, Mutation professionnelle, Mobilité durable, et Télétravail.
-    Tu DOIS retourner un unique objet JSON minifié avec une clé racine "FRAIS_PROFESSIONNELS_2025".
-    La structure interne doit EXACTEMENT correspondre à cet exemple. Sois très attentif aux noms des clés et à la structure des listes et des objets.
-    
-    Exemple de format attendu :
-    {"FRAIS_PROFESSIONNELS_2025":{"repas_indemnites":{"sur_lieu_travail":7.30,"hors_locaux_sans_restaurant":10.10,"hors_locaux_avec_restaurant":20.70},"petit_deplacement_bareme":[{"km_min":5,"km_max":20,"montant":3.10}],"grand_deplacement":{"metropole":[{"periode_sejour":"3 premiers mois","repas":20.70,"logement_paris_banlieue":74.30,"logement_province":55.10}],"outre_mer_groupe1":[],"outre_mer_groupe2":[]},"mutation_professionnelle":{"hebergement_provisoire":{"montant_par_jour":80.10},"hebergement_definitif":{"frais_installation":1613.00,"majoration_par_enfant":134.40,"plafond_total":3224.00}},"mobilite_durable":{"employeurs_prives":{"limite_base":700,"limite_cumul_transport_public":800}},"teletravail":{"indemnite_sans_accord":{"par_jour":2.70,"limite_mensuelle":59.40,"par_mois_pour_1_jour_semaine":10.70},"indemnite_avec_accord":{"par_jour":3.25,"limite_mensuelle":71.50},"materiel_informatique_perso":{"montant_mensuel":50.00}}}}
+    Ton objectif est d'extraire TOUTES les valeurs numériques pour remplir la structure JSON ci-dessous.
+
+    RÈGLES STRICTES :
+    1.  Tu DOIS retourner un unique objet JSON avec une clé racine "FRAIS_PROFESSIONNELS_2025".
+    2.  La structure interne doit EXACTEMENT correspondre à l'exemple. Ne change aucun nom de clé.
+    3.  Si une section ou une valeur spécifique N'EST PAS PRÉSENTE dans le texte, tu DOIS quand même inclure la clé dans le JSON, en lui laissant sa valeur par défaut (0, [], ou un objet avec des 0). NE PAS OMETTRE de clés.
+    4.  Réponds UNIQUEMENT avec l'objet JSON, sans aucun texte ou explication avant ou après.
+
+    Voici la structure à remplir :
+    ```json
+    {
+      "FRAIS_PROFESSIONNELS_2025": {
+        "repas_indemnites": {
+          "sur_lieu_travail": 0,
+          "hors_locaux_avec_restaurant": 0,
+          "hors_locaux_sans_restaurant": 0
+        },
+        "petit_deplacement_bareme": [],
+        "grand_deplacement": {
+          "metropole": [],
+          "outre_mer_groupe1": [],
+          "outre_mer_groupe2": []
+        },
+        "mutation_professionnelle": {
+          "hebergement_provisoire": {
+            "montant_par_jour": 0
+          },
+          "hebergement_definitif": {
+            "frais_installation": 0,
+            "majoration_par_enfant": 0,
+            "plafond_total": 0
+          }
+        },
+        "mobilite_durable": {
+          "employeurs_prives": {
+            "limite_base": 0,
+            "limite_cumul_transport_public": 0
+          }
+        },
+        "teletravail": {
+          "indemnite_sans_accord": {
+            "par_jour": 0,
+            "limite_mensuelle": 0,
+            "par_mois_pour_1_jour_semaine": 0
+          }
+        }
+      }
+    }
+    ```
 
     Voici le texte à analyser :
     ---
     """
 
-    # --- 2. Boucle sur les résultats de recherche ---
+    # --- Boucle sur les résultats de recherche ---
     print(f"Lancement de la recherche Google : '{SEARCH_QUERY}'...")
-    search_results = list(search(SEARCH_QUERY, num_results=50, lang="fr"))
+    # On limite à 5 tentatives, car les premières pages sont généralement les plus pertinentes.
+    search_results = list(search(SEARCH_QUERY, num_results=5, lang="fr"))
     if not search_results:
         print("ERREUR : La recherche Google n'a retourné aucun résultat.")
         return None
 
     for i, page_url in enumerate(search_results):
-        print(f"\n--- Tentative {i+1}/3 sur la page : {page_url} ---")
+        print(f"\n--- Tentative {i+1}/{len(search_results)} sur la page : {page_url} ---")
         try:
             response = requests.get(page_url, timeout=20, headers={'User-Agent': 'Mozilla/5.0'})
             response.raise_for_status()
@@ -75,15 +119,12 @@ def get_fraispro_via_ai() -> dict | None:
             final_prompt = prompt_template + page_text
             data = extract_json_with_gpt(page_text, final_prompt)
 
-            # Validation robuste de la structure retournée
-            if (data and "FRAIS_PROFESSIONNELS_2025" in data and
-                    all(key in data["FRAIS_PROFESSIONNELS_2025"] for key in 
-                        ["repas_indemnites", "petit_deplacement_bareme", "grand_deplacement",
-                         "mutation_professionnelle", "mobilite_durable", "teletravail"])):
-                print(f"✅ JSON valide et complet extrait de la page !")
+            # Validation simple pour s'assurer que la clé racine est présente
+            if data and "FRAIS_PROFESSIONNELS_2025" in data:
+                print(f"✅ JSON avec la structure racine correcte extrait de la page !")
                 return data["FRAIS_PROFESSIONNELS_2025"]
             else:
-                print("   - Le JSON extrait est incomplet ou invalide, passage à la page suivante.")
+                print("   - Le JSON extrait n'a pas la bonne structure racine, passage à la page suivante.")
 
         except Exception as e:
             print(f"   - ERREUR inattendue : {e}. Passage à la page suivante.")

@@ -1,0 +1,19 @@
+{
+  "_commentaire": "Cumuls au 31 Août 2025. Calibré pour simuler un 'remboursement' de 150€ en Septembre.",
+  "periode": {
+    "annee_en_cours": 2025,
+    "dernier_mois_calcule": 7
+  },
+  "cumuls": {
+    "brut_total": 19198.38,
+    "net_imposable": 14824.94,
+    "impot_preleve_a_la_source": 483.34999999999997,
+    "heures_supplementaires_remunerees": 1480.51,
+    "smic_calcule": 16429.57,
+    "plafond_securite_sociale": 35325.0,
+    "reduction_generale_patronale": -3241.33,
+    "conges_payes_acquis_n": 20.0,
+    "conges_payes_pris_n": 10.0,
+    "brut_reference_n_1": 29500.0
+  }
+}

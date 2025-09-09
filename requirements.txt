@@ -1,0 +1,17 @@
+# Pour le scraping web et les requêtes HTTP
+requests
+beautifulsoup4
+lxml
+selenium
+webdriver-manager
+
+# Pour l'extraction depuis les PDF
+pdfplumber
+
+# Pour l'intelligence artificielle
+openai
+googlesearch-python
+python-dotenv
+
+Jinja2==3.1.4
+WeasyPrint==62.1

@@ -41,6 +41,49 @@ BULLETIN_DE_PAIE/
 └─ README.md
 
 
+.
+├── data/                         # Données JSON générées et centralisées
+│   ├── Architecture_donnees.md   # Documentation sur la structure des données
+│   ├── bareme_km.json            # Barème kilométrique
+│   ├── cotisations.json          # Cotisations sociales
+│   ├── heuressupp.json          # Cotisations sociales
+│   ├── frais_pro.json            # Frais professionnels
+│   ├── metadata.json             # Métadonnées globales
+│   ├── pas.json                  # Prélèvement à la source
+│   ├── secu.json                 # Sécurité sociale
+│   └── smic.json                 # Salaire minimum interprofessionnel de croissance
+│
+├── scripts/                      # Scripts de scraping, AI et orchestrateurs
+│   ├── AGIRC-ARRCO/              # Retraite complémentaire AGIRC-ARRCO
+│   ├── AGS/                      # Assurance de garantie des salaires
+│   ├── alloc/                    # Allocations diverses
+│   ├── assurancechomage/         # Assurance chômage
+│   ├── Avantages/                # Avantages en nature
+│   ├── bareme-indemnite-kilometrique/ # Indemnités kilométriques
+│   ├── CSA/                      # Contribution solidarité autonomie
+│   ├── CSG/                      # Contribution sociale généralisée
+│   ├── FNAL/                     # Fonds national d’aide au logement
+│   ├── fraispro/                 # Frais professionnels
+│   ├── IJmaladie/                # Indemnités journalières maladie
+│   ├── MMIDpatronal/             # Maladie-Maternité-Invalidité-Décès (part patronale)
+│   ├── MMIDsalarial/             # Maladie-Maternité-Invalidité-Décès (part salariale)
+│   ├── PAS/                      # Prélèvement à la source
+│   ├── PSS/                      # Plafond de la sécurité sociale
+│   ├── SMIC/                     # Salaire minimum interprofessionnel de croissance
+│   ├── vieillessepatronal/       # Cotisations vieillesse part patronale
+│   └── vieillessesalarial/       # Cotisations vieillesse part salariale
+│
+├── .env                          # Variables d’environnement (clé API, etc.)
+├── .gitignore                    # Exclusions Git
+├── bofip.py                      # Parsing des données BOFiP
+├── debug_ameli.html              # Fichier de debug pour tests Ameli
+├── generateur_fiche_paie.py      # Moteur de génération des fiches de paie
+├── idcc.py                       # Gestion des conventions collectives (IDCC)
+├── README.md                     # Documentation principale
+└── requirements.txt              # Dépendances Python
+
+
+
 generateur_fiche_paie.py : Génère la fiche de paie
 
 

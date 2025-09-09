@@ -15,7 +15,7 @@
     },
     "constantes_paie_2025": {
       "smic_horaire": {
-        "cas_general": 11.88,
+        "cas_general": 11.98,
         "entre_17_et_18_ans": 10.69,
         "moins_de_17_ans": 9.5
       },
@@ -30,12 +30,8 @@
       },
       "parametre_T_reduction_generale": 0.3195,
       "saisie_sur_salaire": {
-        "solde_bancaire_insaisissable": 635.71,
+        "solde_bancaire_insaisissable": 646.52,
         "bareme_mensuel": [
-          {
-            "tranche_plafond": 0.0,
-            "quotite_saisissable": 1.0
-          },
           {
             "tranche_plafond": 370.0,
             "quotite_saisissable": 0.05
@@ -64,7 +60,8 @@
             "tranche_plafond": 2133.33,
             "quotite_saisissable": 1.0
           }
-        ]
+        ],
+        "majoration_par_personne_a_charge": 143.33
       }
     },
     "avantages_en_nature": {

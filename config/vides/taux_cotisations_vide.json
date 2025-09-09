@@ -106,6 +106,65 @@
       "base": "heures_sup",
       "salarial": null,
       "patronal": null
+    },
+    "retraite_comp_t2": {
+      "libelle": "Retraite Complémentaire Tranche 2 (AGIRC-ARCCO)",
+      "base": "tranche_2",
+      "salarial": null,
+      "patronal": null
+    },
+    "ceg_t2": {
+      "libelle": "Contribution d'Equilibre Général (CEG) T2",
+      "base": "tranche_2",
+      "salarial": null,
+      "patronal": null
+    },
+    "cet": {
+      "libelle": "Contribution d'Equilibre Technique (CET)",
+      "base": "brut_sup_plafond",
+      "salarial": null,
+      "patronal": null
+    },
+    "apec": {
+      "libelle": "Cotisation APEC (Cadres)",
+      "base": "brut_cadre_4_plafonds",
+      "salarial": null,
+      "patronal": null
+    },
+    "pas_bareme_taux_neutre_2025": {
+  "libelle": "Barème taux neutre PAS 2025 (mensuel, métropole)",
+  "base": "net_imposable_mensuel",
+  "tranches": []
+    },
+    "bareme_kilometrique_voitures_2025": {
+      "libelle": "Barème kilométrique voitures 2025 (Service-Public)",
+      "base": "distance_km",
+      "segments": [
+        { "d_min": 0, "d_max": 5000 },
+        { "d_min": 5001, "d_max": 20000 },
+        { "d_min": 20001, "d_max": null }
+      ],
+      "tranches_cv": []
+    },
+        "bareme_kilometrique_motocyclettes_2025": {
+      "libelle": "Barème kilométrique motocyclettes 2025 (Service-Public)",
+      "base": "distance_km",
+      "segments": [
+        { "d_min": 0, "d_max": 3000 },
+        { "d_min": 3001, "d_max": 6000 },
+        { "d_min": 6001, "d_max": null }
+      ],
+      "tranches_cv": []
+    },
+    "bareme_kilometrique_cyclomoteurs_2025": {
+      "libelle": "Barème kilométrique cyclomoteurs 2025 (Service-Public)",
+      "base": "distance_km",
+      "segments": [
+        { "d_min": 0, "d_max": 3000 },
+        { "d_min": 3001, "d_max": 6000 },
+        { "d_min": 6001, "d_max": null }
+      ],
+      "tranches_cv": []
     }
   }
 }

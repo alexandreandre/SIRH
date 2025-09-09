@@ -1,0 +1,20 @@
+{
+  "_commentaire": "Saisie des éléments variables du mois (hors temps de travail).",
+  "periode": {
+    "mois": 7,
+    "annee": 2025
+  },
+  "primes": [
+    {
+      "prime_id": "prime_exceptionnelle",
+      "montant": 100.0
+    },
+    {
+      "prime_id": "prime_partage_valeur",
+      "montant": 1000.0
+    }
+  ],
+  "notes_de_frais": [
+
+  ]
+}

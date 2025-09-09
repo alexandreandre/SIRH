@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulletin de Paie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bulletin de Paie - {{ en_tete.periode }}</h1>
+    </header>
+
+    <section id="info-generales">
+        <div id="info-entreprise">
+            <h2>Entreprise</h2>
+            <p>{{ en_tete.entreprise.raison_sociale }}</p>
+            <p>SIRET : {{ en_tete.entreprise.siret }}</p>
+        </div>
+        <div id="info-salarie">
+            <h2>Salarié</h2>
+            <p>{{ en_tete.salarie.nom_complet }}</p>
+            <p>Emploi : {{ en_tete.salarie.emploi }}</p>
+        </div>
+    </section>
+    
+    <hr>
+    
+    {% if details_conges %}
+    <section id="detail-conges">
+        <h2>Indemnité de Congés Payés</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="libelle">Libellé</th>
+                    <th class="numerique">Base / Qté</th>
+                    <th class="numerique">Taux</th>
+                    <th class="numerique">Gains</th>
+                    <th class="numerique">Retenues</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ligne in details_conges %}
+                <tr>
+                    <td class="libelle">{{ ligne.libelle }}</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.quantite) if ligne.quantite is not none else '' }}</td>
+                    <td class="numerique">{{ "%.4f"|format(ligne.taux) if ligne.taux is not none else '' }}</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.gain) if ligne.gain is not none else '' }} €</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.perte) if ligne.perte is not none else '' }} €</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    {% endif %}
+    <section id="detail-brut">
+        <h2>Rémunération Brute</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="libelle">Libellé</th>
+                    <th class="numerique">Base / Qté</th>
+                    <th class="numerique">Taux</th>
+                    <th class="numerique">Gains</th>
+                    <th class="numerique">Retenues</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ligne in calcul_du_brut %}
+                
+                {% if ligne.is_sous_total %}
+                <tr class="subtotal-row">
+                    <td class="libelle"><strong>{{ ligne.libelle }}</strong></td>
+                    <td class="numerique"><strong>{{ "%.2f"|format(ligne.quantite) if ligne.quantite is not none else '' }}</strong></td>
+                    <td></td>
+                    <td class="numerique"><strong>{{ "%.2f"|format(ligne.gain) if ligne.gain is not none else '' }} €</strong></td>
+                    <td></td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td class="libelle">{{ ligne.libelle }}</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.quantite) if ligne.quantite is not none else '' }}</td>
+                    <td class="numerique">{{ "%.4f"|format(ligne.taux) if ligne.taux is not none else '' }}</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.gain) if ligne.gain is not none else '' }} €</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.perte) if ligne.perte is not none else '' }} €</td>
+                </tr>
+                {% endif %}
+
+                {% endfor %}
+
+                {% if arbitrage_conges %}
+                <tr class="info-row">
+                    <td colspan="5">
+                        <em>{{ arbitrage_conges }}</em>
+                    </td>
+                </tr>
+                {% endif %}
+                <tr class="total-row">
+                    <td class="libelle" colspan="3"><strong>Total Salaire Brut</strong></td>
+                    <td class="numerique"><strong>{{ "%.2f"|format(salaire_brut) }} €</strong></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <section id="cotisations">
+        <h2>Détail des Cotisations et Contributions</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th class="libelle">Santé, Retraite, Chômage...</th>
+                    <th class="numerique">Base</th>
+                    <th class="numerique">Taux Sal.</th>
+                    <th class="numerique">Montant Sal.</th>
+                    <th class="numerique">Taux Pat.</th>
+                    <th class="numerique">Montant Pat.</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ligne in structure_cotisations.bloc_principales %}
+                <tr>
+                    <td class="libelle">{{ ligne.libelle }}</td>
+                    <td class="numerique">{% if ligne.base is not none %}{{ "%.2f"|format(ligne.base) }} €{% endif %}</td>
+                    <td class="numerique">{% if ligne.taux_salarial is not none %}{{ "%.4f"|format(ligne.taux_salarial * 100) }} %{% endif %}</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.montant_salarial) }} €</td>
+                    <td class="numerique">{% if ligne.taux_patronal is not none %}{{ "%.4f"|format(ligne.taux_patronal * 100) }} %{% endif %}</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.montant_patronal) }} €</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% if structure_cotisations.bloc_allegements %}
+        <h3 class="sub-header">Allègements de cotisations</h3>
+        <table>
+             <tbody>
+                {% for ligne in structure_cotisations.bloc_allegements %}
+                <tr>
+                    <td class="libelle">{{ ligne.libelle }}</td>
+                    <td class="numerique">{% if ligne.base is not none %}{{ "%.2f"|format(ligne.base) }} €{% endif %}</td>
+                    <td class="numerique">{% if ligne.taux_salarial is not none %}{{ "%.4f"|format(ligne.taux_salarial * 100) }} %{% endif %}</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.montant_salarial) }} €</td>
+                    <td class="numerique">{% if ligne.taux_patronal is not none %}{{ "%.6f"|format(ligne.taux_patronal) }}{% endif %}</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.montant_patronal) }} €</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+        
+        <h3 class="sub-header">Autres Contributions Dues par l'Employeur</h3>
+        <table>
+            <tbody>
+                {% for ligne in structure_cotisations.bloc_autres_contributions.lignes %}
+                <tr>
+                    <td class="libelle">{{ ligne.libelle }}</td>
+                    <td class="numerique">{% if ligne.base is not none %}{{ "%.2f"|format(ligne.base) }} €{% endif %}</td>
+                    <td></td> <td></td> <td class="numerique">{% if ligne.taux_patronal is not none %}{{ "%.4f"|format(ligne.taux_patronal * 100) }} %{% endif %}</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.montant_patronal) }} €</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr class="subtotal-row">
+                    <td class="libelle" colspan="5"><strong>Total autres contributions employeur</strong></td>
+                    <td class="numerique"><strong>{{ "%.2f"|format(structure_cotisations.bloc_autres_contributions.total) }} €</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+        
+        <table class="table-summary">
+            <tbody>
+                <tr class="total-row">
+                    <td class="libelle"><strong>{{ structure_cotisations.total_avant_csg_crds.libelle }}</strong></td>
+                    <td></td> <td></td> <td class="numerique"><strong>{{ "%.2f"|format(structure_cotisations.total_avant_csg_crds.montant_salarial) }} €</strong></td>
+                    <td></td> <td class="numerique"><strong>{{ "%.2f"|format(structure_cotisations.total_avant_csg_crds.montant_patronal) }} €</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <tbody>
+                {% for ligne in structure_cotisations.bloc_csg_non_deductible %}
+                <tr>
+                    <td class="libelle">{{ ligne.libelle }}</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.base) }} €</td>
+                    <td class="numerique">{{ "%.4f"|format(ligne.taux_salarial * 100) }} %</td>
+                    <td class="numerique">{{ "%.2f"|format(ligne.montant_salarial) }} €</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <hr>
+    
+    <section id="resultat-final">
+        <p><strong>Total Cotisations Salariales :</strong><span>{{ "%.2f"|format(structure_cotisations.total_salarial) }} €</span></p>
+        <p><strong>Net à payer avant impôt :</strong><span>{{ "%.2f"|format(synthese_net.net_social_avant_impot) }} €</span></p>
+        <p><strong>Net Imposable :</strong><span>{{ "%.2f"|format(synthese_net.net_imposable) }} €</span></p>
+    
+        <p>Impôt sur le revenu (Prélèvement à la source) :<span>- {{ "%.2f"|format(synthese_net.impot_prelevement_a_la_source.montant) }} €</span></p>
+        
+        {% if primes_non_soumises %}
+        <div class="primes-nettes">
+            {% for prime in primes_non_soumises %}
+            <p><strong>{{ prime.libelle }} :</strong><span>+ {{ "%.2f"|format(prime.montant) }} €</span></p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <h2>NET À PAYER :<span>{{ "%.2f"|format(net_a_payer) }} €</span></h2>
+        
+        <p class="total-employeur"><strong>Total versé par l'employeur :</strong><span>{{ "%.2f"|format(pied_de_page.cout_total_employeur) }} €</span></p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,75 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "schemas/cotisations.schema.json",
+    "title": "cotisations.json",
+    "type": "object",
+    "required": ["meta", "cotisations"],
+    "additionalProperties": false,
+    "properties": {
+      "meta": {
+        "type": "object",
+        "required": ["last_scraped", "hash", "source", "generator"],
+        "additionalProperties": false,
+        "properties": {
+          "last_scraped": { "type": "string" },
+          "hash": { "type": "string" },
+          "source": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "url": { "type": "string" },
+                "label": { "type": "string" },
+                "date_doc": { "type": "string" }
+              },
+              "required": ["url"]
+            }
+          },
+          "generator": { "type": "string" }
+        }
+      },
+      "cotisations": {
+        "type": "array",
+        "minItems": 0,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "libelle", "base", "salarial", "patronal"],
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9_]+$"
+            },
+            "libelle": { "type": "string" },
+            "base": {
+              "type": "string",
+              "enum": [
+                "brut",
+                "plafond_ss",
+                "tranche_2",
+                "brut_sup_plafond",
+                "csg_crds",
+                "heures_sup",
+                "distance_km",
+                "net_imposable_mensuel"
+              ]
+            },
+            "salarial": {
+              "anyOf": [
+                { "type": "null" },
+                { "type": "number", "minimum": 0, "maximum": 1 }
+              ]
+            },
+            "patronal": {
+              "anyOf": [
+                { "type": "null" },
+                { "type": "number", "minimum": 0, "maximum": 1 }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+  

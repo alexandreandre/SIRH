@@ -1,0 +1,191 @@
+{
+  "_commentaire": "Ce fichier contient toutes les informations fixes et légales de l'entreprise, impactant la paie de tous les salariés.",
+  "entreprise": {
+    "identification": {
+      "raison_sociale": "Colorplast",
+      "siren": "123456789",
+      "nic": "00015",
+      "siret": "12345678900015",
+      "naf_ape": "25.61Z",
+      "forme_juridique": "SAS",
+      "adresse": {
+        "rue": "ZA L'OUSSON NORD SOUS LA VUAZ",
+        "code_postal": "01300",
+        "ville": "MAGNIEU"
+      }
+    },
+    "parametres_paie": {
+      "_commentaire": "Paramètres généraux de paie pour l'entreprise.",
+      "idcc": "3248",
+      "effectif": 10,
+      "seuils_effectif": {
+        "_commentaire": "Seuils d'effectif qui conditionnent certaines cotisations.",
+        "depasse_seuil_11_salaries": false,
+        "depasse_seuil_50_salaries": false
+      },
+      "taux_specifiques": {
+        "_commentaire": "Taux de cotisation spécifiques à l'entreprise.",
+        "taux_at_mp": 3.1,
+        "taux_versement_mobilite": 0.0,
+        "taux_fnal": 0.1
+      },
+      "temps_travail": {
+        "_commentaire": "Organisation du temps de travail.",
+        "duree_legale_hebdomadaire": 35,
+        "accord_temps_travail": "Accord 35h"
+      },
+      "conges_payes": {
+        "_commentaire": "Règles de gestion des congés payés.",
+        "periode_acquisition": "01/06 au 31/05",
+        "methode_decompte": "ouvrables"
+      },
+      "parametre_T_reduction_generale": 0.3195,
+      "saisie_sur_salaire": {
+        "solde_bancaire_insaisissable": 646.52,
+        "bareme_mensuel": [
+          {
+            "tranche_plafond": 370.0,
+            "quotite_saisissable": 0.05
+          },
+          {
+            "tranche_plafond": 721.67,
+            "quotite_saisissable": 0.1
+          },
+          {
+            "tranche_plafond": 1074.17,
+            "quotite_saisissable": 0.2
+          },
+          {
+            "tranche_plafond": 1424.17,
+            "quotite_saisissable": 0.25
+          },
+          {
+            "tranche_plafond": 1775.0,
+            "quotite_saisissable": 0.3333
+          },
+          {
+            "tranche_plafond": 2133.33,
+            "quotite_saisissable": 0.6667
+          },
+          {
+            "tranche_plafond": 2133.33,
+            "quotite_saisissable": 1.0
+          }
+        ],
+        "majoration_par_personne_a_charge": 143.33
+      },
+      "avantages_en_nature": {
+        "repas_valeur_forfaitaire": 5.45,
+        "titre_restaurant_exoneration_max_patronale": 7.26,
+        "logement_bareme_forfaitaire": [
+          {
+            "remuneration_max": 1962.5,
+            "valeur_1_piece": 78.7,
+            "valeur_par_piece": 42.1
+          },
+          {
+            "remuneration_max": 2354.99,
+            "valeur_1_piece": 91.8,
+            "valeur_par_piece": 58.9
+          },
+          {
+            "remuneration_max": 2747.49,
+            "valeur_1_piece": 104.8,
+            "valeur_par_piece": 78.7
+          },
+          {
+            "remuneration_max": 3532.49,
+            "valeur_1_piece": 117.9,
+            "valeur_par_piece": 98.2
+          },
+          {
+            "remuneration_max": 4317.49,
+            "valeur_1_piece": 144.5,
+            "valeur_par_piece": 124.5
+          },
+          {
+            "remuneration_max": 5102.49,
+            "valeur_1_piece": 170.4,
+            "valeur_par_piece": 150.4
+          },
+          {
+            "remuneration_max": 5887.49,
+            "valeur_1_piece": 196.8,
+            "valeur_par_piece": 183.3
+          },
+          {
+            "remuneration_max": 5887.5,
+            "valeur_1_piece": 222.7,
+            "valeur_par_piece": 209.6
+          }
+        ]
+      }
+    },
+    "organismes_cotisation": {
+      "urssaf": {
+        "nom": "URSSAF Rhône-Alpes",
+        "numero_cotisant": "UR12345678"
+      },
+      "retraite_complementaire": {
+        "nom": "AGIRC-ARRCO",
+        "numero_adhesion": "RC987654"
+      },
+      "mutuelle": {
+        "nom": "Mutuelle PRO BTP",
+        "numero_contrat": "MPB-C112233"
+      },
+      "prevoyance": {
+        "nom": "Prévoyance BTP",
+        "numero_contrat": "PREV-BTP-445566"
+      }
+    }
+  },
+  "PARAMETRES_ENTREPRISE": {
+    "avantages_en_nature": {
+      "repas_valeur_forfaitaire": 5.45,
+      "titre_restaurant_exoneration_max_patronale": 7.26,
+      "logement_bareme_forfaitaire": [
+        {
+          "remuneration_max": 1962.5,
+          "valeur_1_piece": 78.7,
+          "valeur_par_piece": 42.1
+        },
+        {
+          "remuneration_max": 2354.99,
+          "valeur_1_piece": 91.8,
+          "valeur_par_piece": 58.9
+        },
+        {
+          "remuneration_max": 2747.49,
+          "valeur_1_piece": 104.8,
+          "valeur_par_piece": 78.7
+        },
+        {
+          "remuneration_max": 3532.49,
+          "valeur_1_piece": 117.9,
+          "valeur_par_piece": 98.2
+        },
+        {
+          "remuneration_max": 4317.49,
+          "valeur_1_piece": 144.5,
+          "valeur_par_piece": 124.5
+        },
+        {
+          "remuneration_max": 5102.49,
+          "valeur_1_piece": 170.4,
+          "valeur_par_piece": 150.4
+        },
+        {
+          "remuneration_max": 5887.49,
+          "valeur_1_piece": 196.8,
+          "valeur_par_piece": 183.3
+        },
+        {
+          "remuneration_max": 5887.5,
+          "valeur_1_piece": 222.7,
+          "valeur_par_piece": 209.6
+        }
+      ]
+    }
+  }
+}
